@@ -1,0 +1,1100 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Single Cell Discoveries</title>
+
+    <style>
+        dl,
+        dt,
+        dd,
+        menu {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            margin: 0;
+            font-size: inherit;
+        }
+
+        input,
+        button {
+            font-family: "Albert Sans", sans-serif;
+        }
+
+        input[type=radio] {
+            display: none;
+        }
+
+        :root {
+            font-size: 1.25vw;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Albert Sans", sans-serif;
+            border-right: 0.25rem solid #E3FF53;
+        }
+
+        figure#logo {
+            margin: 0;
+            height: 3rem;
+        }
+
+        figure#logo img {
+            height: 100%;
+        }
+
+        figure#logo h1 {
+            font-size: 0;
+        }
+
+        menu {
+            margin: 0;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .cta-button a {
+            background-color: #E3FF53;
+            color: #0A0A17;
+            padding: 0.65rem 1rem;
+            margin-inline-start: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1rem;
+            font-weight: 600;
+            font-size: 0.75rem;
+            white-space: nowrap;
+            transition-property: color, background-color;
+            transition-duration: 0.4s;
+        }
+
+        .cta-button a:hover {
+            background-color: #1045D3;
+            color: #FFFFFF;
+        }
+
+        nav {
+            background-color: #0A0A17;
+            position: sticky;
+            top: 0;
+            color: #FFFFFF;
+            display: flex;
+            align-items: center;
+            border-bottom: 0.1em solid rgba(194, 192, 209, 0.2509803922);
+            gap: 2rem;
+            padding: 0 6rem;
+            z-index: 1;
+        }
+
+        nav .list-wrapper {
+            display: flex;
+            flex-direction: column-reverse;
+            align-content: flex-end;
+            flex-wrap: wrap;
+            width: 100%;
+            gap: 1rem;
+        }
+
+        nav .subnav-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: stretch;
+            flex-basis: 50%;
+        }
+
+        nav menu {
+            align-items: flex-start;
+            gap: 2rem;
+        }
+
+        nav menu li:hover,
+        nav menu li:focus-within {
+            overflow: visible;
+        }
+
+        nav menu li {
+            list-style: none;
+            position: relative;
+        }
+
+        nav menu li a {
+            color: #FFFFFF;
+            text-decoration: none;
+        }
+
+        nav menu li button {
+            padding: 0 0 1.6rem 0;
+            line-height: 1;
+            z-index: 1;
+            font-size: inherit;
+            cursor: pointer;
+            color: rgba(255, 255, 255, 0.8666666667);
+            background-color: transparent;
+            border: none;
+            margin: 0;
+        }
+
+        nav menu li button h2 {
+            font-weight: 400;
+            letter-spacing: 0.01rem;
+            display: flex;
+            align-items: center;
+            white-space: nowrap;
+        }
+
+        nav menu li button h2:after {
+            content: "";
+            position: absolute;
+            right: -0.75rem;
+            margin: auto 0;
+            height: 0.25rem;
+            width: 0.25rem;
+            border-right: 0.15rem solid #E3FF53;
+            border-bottom: 0.15rem solid #E3FF53;
+            transform: rotate(-45deg);
+            transition: transform ease-in-out 0.2s;
+        }
+
+        nav menu li button:hover,
+        nav menu li button:focus {
+            color: #FFFFFF;
+        }
+
+        nav menu li button:hover h2:after,
+        nav menu li button:focus h2:after {
+            transform: rotate(45deg);
+        }
+
+        nav menu li section:hover,
+        nav menu li section:focus-within,
+        nav menu li button:hover+section,
+        nav menu li button:focus+section {
+            opacity: 1;
+            height: auto;
+        }
+
+        nav menu li section {
+            display: flex;
+            flex-direction: column;
+            overflow: auto;
+            color: #0A0A17;
+            background-color: #FFFFFF;
+            position: absolute;
+            top: 2.6rem;
+            margin-left: -2rem;
+            opacity: 0;
+            width: 24rem;
+            height: 0;
+            box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.1254901961);
+            border-radius: 0 0 2rem 0;
+            z-index: 0;
+            transition: opacity ease-in-out 0.4s;
+        }
+
+        nav menu li section dl {
+            margin-block-start: 0.75rem;
+        }
+
+        nav menu li section dl>a+a {
+            margin-block-start: 0.5rem;
+        }
+
+        nav menu li section dl:first-child,
+        nav menu li section dl:last-child {
+            padding: 1em 2em;
+            background-color: #F2F1FF;
+            border-top: 0.1em solid #dcdde4;
+            margin: 0;
+        }
+
+        nav menu li section dl:first-child {
+            border-top: 0.25rem solid #E3FF53;
+        }
+
+        nav menu li section dl:last-child {
+            background-color: #FFFFFF;
+            padding-block-end: 1.5rem;
+        }
+
+        nav menu li section dl:last-child dt a {
+            padding: 0;
+        }
+
+        nav menu li section a {
+            color: #0A0A17;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+        }
+
+        nav menu li section>a {
+            border-bottom: 0.1rem solid #dcdde4;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+        }
+
+        nav menu li section a+a {
+            margin-block-start: 0.25rem;
+        }
+
+        nav menu li section a+dl {
+            padding-inline-start: 3rem;
+            padding-block-end: 0.5rem;
+        }
+
+        nav menu li section dl dd:last-child {
+            margin-block-end: 0.5rem;
+        }
+
+        nav menu li section a h4 {
+            text-transform: uppercase;
+            letter-spacing: 0.15rem;
+            font-weight: 400;
+            font-size: 0.75rem;
+            padding: 1rem 2rem;
+        }
+
+        nav menu li section a dt {
+            text-transform: uppercase;
+            letter-spacing: 0.1rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding-block-start: 0.5rem;
+        }
+
+        nav menu li section dt+dd {
+            margin-block-start: 0.25rem;
+        }
+
+        nav menu li section dd {
+            font-size: 0.75rem;
+            font-weight: 400;
+            letter-spacing: 0.01em;
+            color: #0A0A17;
+        }
+
+        nav menu li section dt h3 {
+            font-size: 1.125rem;
+            text-transform: none;
+            font-weight: 600;
+            letter-spacing: 0.01rem;
+            margin-block-end: 0.5rem;
+        }
+
+        nav aside {
+            padding-block-start: 0.5rem;
+        }
+
+        nav aside menu {
+            justify-content: flex-end;
+        }
+
+        nav aside menu a {
+            font-size: 0.875rem;
+            color: #dcdde4;
+            display: flex;
+            align-items: center;
+        }
+
+        nav aside menu a img.icon-search {
+            height: 1.125rem;
+            width: 1.125rem;
+            filter: invert(1);
+        }
+
+        nav .applications section {
+            flex-direction: row;
+            width: 48rem;
+        }
+
+        nav .applications section .subnav-wrapper dl:last-child {
+            height: 100%;
+        }
+
+        nav .applications section .subnav-wrapper:nth-child(odd) dl {
+            background-color: #FFFFFF;
+        }
+
+        nav .applications section .subnav-wrapper:nth-child(even) dl {
+            background-color: #F2F1FF;
+        }
+
+        main b {
+            font-weight: 500;
+        }
+
+        main .txt-style-wrapper {
+            display: flex;
+        }
+
+        main .txt-style-wrapper>div {
+            flex-basis: 50%;
+            padding: 3rem 6rem;
+        }
+
+        main .txt-style-wrapper>div .grad-mask {
+            font-weight: 300;
+            background-image: linear-gradient(90deg, #8E7FFC, #21EAC5);
+            background-clip: text;
+            color: transparent;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        main .txt-style-wrapper div:nth-child(even) {
+            background-color: #0A0A17;
+            color: #FFFFFF;
+        }
+
+        main .txt-style-wrapper p {
+            max-width: 24rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        main .txt-style-wrapper:first-child div {
+            padding-block-start: 6rem;
+        }
+
+        main .txt-style-wrapper:last-child div {
+            padding-block-end: 6rem;
+        }
+
+        main .t1 {
+            font-size: 6rem;
+            font-weight: 100;
+            letter-spacing: -0.04em;
+            line-height: 1;
+        }
+
+        main .t2 {
+            font-size: 4rem;
+            font-weight: 200;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+        }
+
+        main .t3 {
+            font-size: 3rem;
+            font-weight: 200;
+            letter-spacing: -0.02em;
+            line-height: 1.15;
+        }
+
+        main .t4 {
+            font-size: 2.5rem;
+            font-weight: 200;
+            letter-spacing: -0.01em;
+            line-height: 1.25;
+        }
+
+        main .t5 {
+            font-size: 2.25rem;
+            font-weight: 200;
+            letter-spacing: 0;
+            line-height: 1.275;
+        }
+
+        main .t6 {
+            font-size: 2rem;
+            font-weight: 500;
+            letter-spacing: 0.01em;
+            line-height: 1.3;
+        }
+
+        main .p1 {
+            font-size: 1.15rem;
+            letter-spacing: auto;
+            font-weight: 300;
+            line-height: 1.4;
+        }
+
+        main .p2 {
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        main .p3 {
+            font-size: 0.875rem;
+            line-height: 1.5;
+        }
+
+        main .s1 {
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+        }
+
+        main .s1 div:nth-child(even) {
+            color: #21EAC5;
+        }
+
+        main .s2 {
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-size: 0.875rem;
+        }
+
+        main .s2 div:nth-child(even) {
+            color: #93e4d5;
+        }
+
+        main .s3 {
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 0.75rem;
+        }
+
+        footer {
+            display: flex;
+            gap: 2.75rem;
+            background-color: #0A0A17;
+            color: #FFFFFF;
+            padding: 4rem 6rem;
+            border-top: 0.1em solid rgba(194, 192, 209, 0.2509803922);
+        }
+
+        footer .cta-button {
+            margin: 1rem 0 2rem;
+        }
+
+        footer .cta-button a {
+            margin: 0;
+        }
+
+        footer address ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        footer address ul li {
+            font-style: normal;
+            color: #C2C0D1;
+            line-height: 1.5;
+        }
+
+        footer section:first-child {
+            margin-inline-end: auto;
+        }
+
+        footer section {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        footer menu {
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        footer menu h2 {
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            font-weight: 400;
+            font-size: 0.875rem;
+            margin-block-end: 0.25rem;
+        }
+
+        footer menu a {
+            color: #FFFFFF;
+            text-decoration: none;
+            font-size: 0.75rem;
+            color: #C2C0D1;
+            letter-spacing: 0.01em;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 1440px) {
+            :root {
+                font-size: 1.0625rem;
+            }
+
+            nav,
+            footer {
+                padding-inline: 4rem;
+            }
+
+            main .txt-style-wrapper>div {
+                padding-inline: 4rem;
+            }
+        }
+
+        @media (max-width: 1280px) {
+            :root {
+                font-size: 1rem;
+            }
+
+            nav,
+            footer {
+                padding-inline: 2rem;
+            }
+
+            main .txt-style-wrapper>div {
+                padding-inline: 2rem;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            :root {
+                font-size: 0.9375rem;
+            }
+        }
+    </style>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,700;1,100;1,200;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
+        integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</head>
+
+<body>
+
+    <nav>
+
+        <a href="/">
+            <figure id="logo">
+                <img alt="Text description of logo and mark" src="
+              data:image/svg+xml;base64,
+                PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIGlkPSJMYXllcl8yIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1ODUuMzkgMTMyLjE5Ij48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6I2ZmZjt9LmNscy0ye2ZpbGw6I2U0ZmY3MDt9LmNscy0ze2ZpbGw6IzhhN2ZmODt9LmNscy00e2ZpbGw6IzIyZTZjMDt9LmNscy01e2ZpbGw6IzBmNDVjZjt9LmNscy02e2ZpbGw6IzRkNjJlNDt9PC9zdHlsZT48L2RlZnM+PGcgaWQ9IkxheWVyXzEtMiI+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJtMTg1LjMyLDUxLjkyYzQuNywwLDcuMzQtMi41OSw3LjM0LTYuMDQsMC05LjUtMjAuMTMtMy41Ni0yMC4xMy0xNy4xNiwwLTYuNzUsNS4wNy0xMC43NCwxMi41OC0xMC43NCw2LjI2LDAsMTAuNjksMi44MSwxMi4zNiw3LjQ1bC00Ljk2LDEuNzhjLS43LTIuNDMtMy42Ny00LjUzLTcuNS00LjY0LTMuOTktLjA1LTcuMDIsMi4xNi03LjAyLDUuNzcsMCw5LjM0LDIwLjEzLDMuOTQsMjAuMTMsMTcuMTYsMCw2LjE1LTQuNDMsMTEuMDEtMTIuNjMsMTEuMDEtNi42OSwwLTEyLjE0LTMuMjQtMTMuNDQtOC4zN2w0Ljk3LTEuODNjLjY1LDMuMDIsMy42Miw1LjYxLDguMzEsNS42MVoiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Im0yMTksMTguMzV2MzcuNzhoLTUuNFYxOC4zNWg1LjRaIi8+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJtMjY1LjksNTYuMTNoLTUuNWwtMTguODQtMjkuMnYyOS4yaC01LjRWMTguMzVoNS41NmwxOC43OCwyOS4wOXYtMjkuMDloNS40djM3Ljc4WiIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0ibTMwMC4wNywyMi42NmMtNy43NywwLTEzLjYsNS44My0xMy42LDE0LjU3czUuNzgsMTQuNTcsMTMuNDksMTQuNTdjNS42NywwLDEwLjMxLTMuMDIsMTIuMi03Ljcydi00LjFoLTExLjc3di00LjQzaDE3LjI3djguOGMtMi40OCw2Ljk2LTkuMjMsMTIuMTQtMTcuNywxMi4xNC0xMC41OCwwLTE5LTcuOTMtMTktMTkuMjdzOC40Mi0xOS4yNywxOS0xOS4yN2M3LjI5LDAsMTMuOTgsMy42NywxNi44OSwxMC4ybC00Ljc1LDEuNzNjLTIuNy01LjA3LTYuOTYtNy4yMy0xMi4wNC03LjIzWiIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0ibTMzOC41Niw1MS41NGgxNy4yN3Y0LjU5aC0yMi42N1YxOC4zNWg1LjR2MzMuMTlaIi8+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJtMzc1LjU4LDIyLjk0djExLjcxaDE1djQuNTloLTE1djEyLjNoMTkuODZ2NC41OWgtMjUuMjZWMTguMzVoMjUuMjZ2NC41OWgtMTkuODZaIi8+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJtNDUxLjI2LDE3Ljk3YzcuNTYsMCwxMy44MiwzLjY3LDE2Ljg5LDEwLjI1bC00LjM3LDEuNTZjLTIuNDgtNC45Ni03LjYxLTcuMTItMTIuNDEtNy4xMi03LjcyLDAtMTMuNTUsNS42MS0xMy41NSwxNC41N3M1LjgzLDE0LjU3LDEzLjU1LDE0LjU3YzQuOTEsMCwxMC4xNS0yLjIxLDEyLjg1LTguMWw0LjM3LDEuNTFjLTMuMjQsNy42Ni05LjU1LDExLjI4LTE3LjMyLDExLjI4LTEwLjU4LDAtMTguOTQtNy45OS0xOC45NC0xOS4yN3M4LjM3LTE5LjI3LDE4Ljk0LTE5LjI3WiIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0ibTQ4OS43NCwyMi45NHYxMS43MWgxNXY0LjU5aC0xNXYxMi4zaDE5Ljg2djQuNTloLTI1LjI2VjE4LjM1aDI1LjI2djQuNTloLTE5Ljg2WiIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0ibTUzMS4wOSw1MS41NGgxNy4yN3Y0LjU5aC0yMi42N1YxOC4zNWg1LjR2MzMuMTlaIi8+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJtNTY4LjEyLDUxLjU0aDE3LjI3djQuNTloLTIyLjY3VjE4LjM1aDUuNHYzMy4xOVoiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Im0yMDMuNiw5NS4zOGMwLDEwLjc5LTYuOTEsMTcuMjktMTguMzksMTcuMjloLTExLjQ4di0zNC43OWgxMS40OGMxMS40OCwwLDE4LjM5LDYuNjYsMTguMzksMTcuNDlabS00LjAzLDBjMC04LjgtNC45Mi0xNC4wMS0xNC4zNi0xNC4wMWgtNy41djI3LjgzaDcuNWM5LjQ0LDAsMTQuMzYtNS4wNywxNC4zNi0xMy44MloiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Im0yMjMuMzcsNzcuODl2MzQuNzloLTMuOTh2LTM0Ljc5aDMuOThaIi8+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJtMjUxLjUsMTA5LjY0YzQuNzIsMCw3LjQxLTIuNjgsNy40MS02LjIxLDAtOS40OS0xOC44OS0zLjY4LTE4Ljg5LTE2LjIsMC01Ljk2LDQuNDctOS42OSwxMS4yMy05LjY5LDUuODIsMCw5LjY0LDIuNzMsMTEuMDMsNi43MWwtMy41MywxLjM0Yy0uNzUtMi4yOS0zLjU4LTQuNjItNy42NS00LjY3LTMuOTgtLjA1LTcuMTEsMi4xNC03LjExLDUuOTYsMCw5LjQ0LDE4Ljg5LDQuMDgsMTguODksMTYuMjUsMCw1LjQyLTMuODgsOS44OS0xMS4zMyw5Ljg5LTYuMTYsMC0xMC43My0zLjA4LTExLjk4LTcuNmwzLjUzLTEuMzljLjY1LDIuNzgsMy40OCw1LjYyLDguNCw1LjYyWiIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0ibTI5NC4xOCw3Ny41NGM3LjIxLDAsMTIuODIsMy40OCwxNS41Niw5LjU0bC0zLjIzLDEuMTljLTIuMjQtNC44Mi03LjA2LTcuMTYtMTIuMzMtNy4xNi03LjQ2LDAtMTMuMTIsNS4zMi0xMy4xMiwxNC4xNnM1LjY3LDE0LjE2LDEzLjEyLDE0LjE2YzUuMzcuMDUsMTAuMjktMi41MywxMi42Ny03Ljk1bDMuMjMsMS4xOWMtMi44Myw2LjgxLTguNSwxMC4zNC0xNS45LDEwLjM0LTkuNjksMC0xNy4yLTcuMzUtMTcuMi0xNy43NHM3LjUtMTcuNzQsMTcuMi0xNy43NFoiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Im0zMjMuNDUsOTUuMjhjMC0xMC40NCw3LjYtMTcuNzQsMTcuMzQtMTcuNzRzMTcuMjUsNy4zMSwxNy4yNSwxNy43NC03LjQ2LDE3Ljc0LTE3LjI1LDE3Ljc0LTE3LjM0LTcuMy0xNy4zNC0xNy43NFptMzAuNTEsMGMwLTguODUtNS42Ny0xNC4yNi0xMy4xNy0xNC4yNnMtMTMuMjcsNS40Mi0xMy4yNywxNC4yNiw1LjcyLDE0LjI2LDEzLjI3LDE0LjI2LDEzLjE3LTUuNDcsMTMuMTctMTQuMjZaIi8+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJtMzk5LjY4LDc3Ljg5bC0xMy4yMiwzNC43OWgtNC41N2wtMTMuMDItMzQuNzloNC4yMmwxMS4xOCwzMC41NiwxMS4xOC0zMC41Nmg0LjIyWiIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0ibTQxOC43Niw4MS4zN3YxMS44OGgxNC4zNnYzLjQ4aC0xNC4zNnYxMi40N2gxOC44NHYzLjQ4aC0yMi44MXYtMzQuNzloMjIuODF2My40OGgtMTguODRaIi8+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJtNDc4LjU5LDg4LjE3YzAsNC41Ny0yLjQ4LDguNzUtOC4zLDkuOTRsOC43NSwxNC41NmgtNC41MmwtOC4zLTE0LjIxaC03Ljc1djE0LjIxaC0zLjk4di0zNC43OWgxMi4yM2M4LjEsMCwxMS44OCw0LjU3LDExLjg4LDEwLjI5Wm0tMTEuODgtNi44MWgtOC4yNXYxMy42Mmg4LjNjNS40MiwwLDcuOC0yLjczLDcuOC02Ljgxcy0yLjI5LTYuODEtNy44NS02LjgxWiIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0ibTQ5OC43Nyw3Ny44OXYzNC43OWgtMy45OHYtMzQuNzloMy45OFoiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Im01MjAuNjMsODEuMzd2MTEuODhoMTQuMzZ2My40OGgtMTQuMzZ2MTIuNDdoMTguODR2My40OGgtMjIuODF2LTM0Ljc5aDIyLjgxdjMuNDhoLTE4Ljg0WiIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0ibTU2Ni41LDEwOS42NGM0LjcyLDAsNy40MS0yLjY4LDcuNDEtNi4yMSwwLTkuNDktMTguODktMy42OC0xOC44OS0xNi4yLDAtNS45Niw0LjQ3LTkuNjksMTEuMjMtOS42OSw1LjgxLDAsOS42NCwyLjczLDExLjAzLDYuNzFsLTMuNTMsMS4zNGMtLjc1LTIuMjktMy41OC00LjYyLTcuNjUtNC42Ny0zLjk4LS4wNS03LjExLDIuMTQtNy4xMSw1Ljk2LDAsOS40NCwxOC44OCw0LjA4LDE4Ljg4LDE2LjI1LDAsNS40Mi0zLjg4LDkuODktMTEuMzMsOS44OS02LjE2LDAtMTAuNzQtMy4wOC0xMS45OC03LjZsMy41My0xLjM5Yy42NSwyLjc4LDMuNDgsNS42Miw4LjQsNS42MloiLz48cGF0aCBjbGFzcz0iY2xzLTMiIGQ9Im02OC4xOCwzNS4wMmMyMC4yOC0xMC45MiwzOC45MS0xMC45Niw1MC4xNC05LjQxLS40Mi0uNTUtLjg0LTEuMDktMS4yOC0xLjYyLTUuOTgtMi41OC0yMy4wNS04LjE4LTQ2LjY2LTEuMTYtMTQuMjQsNC4yNC0yNC44MywxMS44NC0zMC44OCwxNy4wNnYyMS4wN2M1LjQ3LTguMTMsMTQuNTItMTguMzMsMjguNjctMjUuOTVaIi8+PHBhdGggY2xhc3M9ImNscy0yIiBkPSJtNzAuMiw1MC42OGMxOS45NC0xNi4zLDQwLjQ5LTIwLjQxLDUwLjc4LTIxLjQyLS4wMy0uMDUtLjA3LS4xLS4xLS4xNS0xMC4yNi0xLjgxLTMwLjAxLTIuOTEtNTEuMjksOC41NC0xNS45Niw4LjU5LTI1LjI3LDIwLjg1LTMwLjA5LDI5LjA2djI4LjUxYzQuMDYtMTEuNzcsMTIuNzctMjkuODksMzAuNy00NC41NFoiLz48cGF0aCBjbGFzcz0iY2xzLTYiIGQ9Im0xMTIuNTksMTkuMTNjLTEuNzYtMS43NC0zLjYzLTMuMzgtNS41OC00LjkyLTUuNzgtMi44My0xNi45LTYuNC0zNC41Ni00LjgyLTEzLjY1LDEuMjMtMjYuNDEsNS41OC0zMi45NSw4LjEzdjE4LjM5YzYuNDUtNS4yNiwxNi42MS0xMS45OCwzMC4wMi0xNS45NywxOS40MS01Ljc4LDM0LjQxLTMuNDUsNDMuMDctLjgyWiIvPjxwYXRoIGNsYXNzPSJjbHMtNCIgZD0ibTEyMi44MiwzMi4xNmMtOS4yNS43Ny0zMC41Myw0LjM1LTUwLjcxLDIwLjg1LTI0LjUyLDIwLjA0LTMxLjI2LDQ2Ljc1LTMyLjYsNTMuMzR2MjAuMjhjOC4xNCwzLjU4LDE3LjEzLDUuNTcsMjYuNTksNS41NywzNi41LDAsNjYuMS0yOS41OSw2Ni4xLTY2LjEsMC0xMi40MS0zLjQzLTI0LjAyLTkuMzgtMzMuOTRaIi8+PHBhdGggY2xhc3M9ImNscy01IiBkPSJtNzIuMTksNi40YzEwLjIzLS45MiwxOC4zNS0uMTksMjQuNjIsMS4xNy05LjE4LTQuODMtMTkuNjItNy41Ny0zMC43MS03LjU3LTkuNDYsMC0xOC40NSwxLjk5LTI2LjU5LDUuNTd2OC43M2M2Ljk0LTIuNjUsMTkuMjYtNi42OCwzMi42OC03Ljg5WiIvPjxwYXRoIGNsYXNzPSJjbHMtNCIgZD0ibTMzLjMxLDEyMy40OFY4LjcyQzEzLjQxLDIwLjExLDAsNDEuNTMsMCw2Ni4xczEzLjQxLDQ1Ljk5LDMzLjMxLDU3LjM4WiIvPjwvZz48L3N2Zz4=
+            ">
+                <figcaption>
+                    <h1>Single Cell Discoveries</h1>
+                </figcaption>
+            </figure>
+        </a>
+
+        <div class="list-wrapper">
+
+            <menu aria-label="Primary Navigation">
+
+                <li class="services">
+                    <button>
+                        <h2>Services</h2>
+                    </button>
+                    <section id="">
+                        <dl>
+                            <dt>
+                                <h3>Services Overview</h3>
+                            </dt>
+                            <dd>Sit augue a at nisl ullamcorper facillisis cul auctom ulitricies sed donec torquet
+                                canibutier eros
+                                mobi.</dd>
+                        </dl>
+                        <a href="#">
+                            <h4>Single Cell Sequencing</h4>
+                        </a>
+                        <dl>
+                            <a href="#">
+                                <dt>Sort-SEQ</dt>
+                                <dd>Plate based single-cell gene expression</dd>
+                            </a>
+                            <a href="#">
+                                <dt>10x Genomics</dt>
+                                <dd>High throughput single-cell gene expression</dd>
+                            </a>
+                            <a href="#">
+                                <dt>VASA-SEQ</dt>
+                                <dd>Full length total RNA sequencing</dd>
+                            </a>
+                        </dl>
+                        <a href="#">
+                            <h4>Spatial Transcriptonomics</h4>
+                        </a>
+                        <dl>
+                            <a href="#">
+                                <dt>10x Visium</dt>
+                                <dd>Plate based single-cell gene expression</dd>
+                            </a>
+                        </dl>
+                        <a href="#">
+                            <h4>Pooled Cells</h4>
+                        </a>
+                        <dl>
+                            <a href="#">
+                                <dt>Bulk RNA</dt>
+                                <dd>Full length total RNA sequencing</dd>
+                            </a>
+                        </dl>
+                        <dl>
+                            <dt>
+                                <a href="#">
+                                    <h3>Research & Development</h3>
+                                </a>
+                            </dt>
+                            <dd>Sit augue a at nisl ullamcorper facillisis cul auctom ulitricies sed donec torquet
+                                canibutier erosmobi.</dd>
+                        </dl>
+                    </section>
+                </li>
+                <li class="applications">
+                    <button>
+                        <h2>Applications</h2>
+                    </button>
+                    <section id="">
+
+                        <div class="subnav-wrapper">
+
+                            <dl>
+                                <dt>
+                                    <a href="#">
+                                        <h3>Application Overview</h3>
+                                    </a>
+                                </dt>
+                                <dd>Sit augue a at nisl ullamcorper facillisis cul auctom ulitricies sed donec torquet
+                                    canibutier eros mobi.</dd>
+                            </dl>
+
+                            <dl>
+                                <a href="#">Sort-SEQ</a>
+                                <a href="#">10x Genomics</a>
+                                <a href="#">VASA-SEQ</a>
+                                <a href="#">Sort-SEQ</a>
+                                <a href="#">10x Genomics</a>
+                                <a href="#">VASA-SEQ</a>
+                            </dl>
+
+                        </div>
+
+                        <div class="subnav-wrapper">
+
+                            <dl>
+                                <dt>
+                                    <a href="#">
+                                        <h3>Research Areas</h3>
+                                    </a>
+                                </dt>
+                                <dd>Sit augue a at nisl ullamcorper facillisis cul auctom ulitricies sed donec torquet
+                                    canibutier erosmobi.</dd>
+                            </dl>
+
+                            <dl>
+                                <a href="#">Sort-SEQ</a>
+                                <a href="#">10x Genomics</a>
+                                <a href="#">VASA-SEQ</a>
+                            </dl>
+
+                        </div>
+
+                    </section>
+                </li>
+                <li class="approach">
+                    <button>
+                        <h2>Our Approach</h2>
+                    </button>
+                    <section id="">
+                        <dl>
+                            <dt>
+                                <h3>Approach Overview</h3>
+                            </dt>
+                            <dd>Sit augue a at nisl ullamcorper facillisis cul auctom ulitricies sed donec torquet
+                                canibutier eros
+                                mobi.</dd>
+                        </dl>
+                        <a href="#">
+                            <h4>Single Cell Sequencing</h4>
+                        </a>
+                        <dl>
+                            <a href="#">
+                                <dt>Sort-SEQ</dt>
+                                <dd>Plate based single-cell gene expression</dd>
+                            </a>
+                            <a href="#">
+                                <dt>10x Genomics</dt>
+                                <dd>High throughput single-cell gene expression</dd>
+                            </a>
+                            <a href="#">
+                                <dt>VASA-SEQ</dt>
+                                <dd>Full length total RNA sequencing</dd>
+                            </a>
+                        </dl>
+                        <a href="#">
+                            <h4>Spatial Transcriptonomics</h4>
+                        </a>
+                        <dl>
+                            <a href="#">
+                                <dt>10x Visium</dt>
+                                <dd>Plate based single-cell gene expression</dd>
+                            </a>
+                        </dl>
+                        <a href="#">
+                            <h4>Pooled Cells</h4>
+                        </a>
+                        <dl>
+                            <a href="#">
+                                <dt>Bulk RNA</dt>
+                                <dd>Full length total RNA sequencing</dd>
+                            </a>
+                        </dl>
+                        <dl>
+                            <a href="#">
+                                <dt>
+                                    <h3>Research & Development</h3>
+                                </dt>
+                                <dd>Sit augue a at nisl ullamcorper facillisis cul auctom ulitricies sed donec torquet
+                                    canibutier eros
+                                    mobi.</dd>
+                            </a>
+                        </dl>
+                    </section>
+                </li>
+                <li class="resources applications">
+                    <button>
+                        <h2>Resources</h2>
+                    </button>
+                    <section id="">
+
+                        <div class="subnav-wrapper">
+
+                            <dl>
+                                <dt>
+                                    <a href="#">
+                                        <h3>Resources Overview</h3>
+                                    </a>
+                                </dt>
+                                <dd>Sit augue a at nisl ullamcorper facillisis cul auctom ulitricies sed donec torquet
+                                    canibutier eros mobi.</dd>
+                            </dl>
+
+                            <dl>
+                                <a href="#">Sort-SEQ</a>
+                                <a href="#">10x Genomics</a>
+                                <a href="#">VASA-SEQ</a>
+                            </dl>
+
+                        </div>
+
+                        <div class="subnav-wrapper">
+
+                            <dl>
+                                <dt>
+                                    <a href="#">
+                                        <h3>Research Areas</h3>
+                                    </a>
+                                </dt>
+                                <dd>Sit augue a at nisl ullamcorper facillisis cul auctom ulitricies sed donec torquet
+                                    canibutier erosmobi.</dd>
+                            </dl>
+
+                            <dl>
+                                <a href="#">Sort-SEQ</a>
+                                <a href="#">10x Genomics</a>
+                                <a href="#">VASA-SEQ</a>
+                                <a href="#">Sort-SEQ</a>
+                                <a href="#">10x Genomics</a>
+                                <a href="#">VASA-SEQ</a>
+                            </dl>
+
+                        </div>
+
+                    </section>
+                </li>
+                <li class="about">
+                    <button>
+                        <h2>About</h2>
+                    </button>
+                    <section id="">
+                        <dl>
+                            <dt>
+                                <h3>About Overview</h3>
+                            </dt>
+                            <dd>Sit augue a at nisl ullamcorper facillisis cul auctom ulitricies sed donec torquet
+                                canibutier eros
+                                mobi.</dd>
+                        </dl>
+                        <a href="#">
+                            <h4>Single Cell Sequencing</h4>
+                        </a>
+                        <dl>
+                            <a href="#">
+                                <dt>Sort-SEQ</dt>
+                                <dd>Plate based single-cell gene expression</dd>
+                            </a>
+                            <a href="#">
+                                <dt>10x Genomics</dt>
+                                <dd>High throughput single-cell gene expression</dd>
+                            </a>
+                            <a href="#">
+                                <dt>VASA-SEQ</dt>
+                                <dd>Full length total RNA sequencing</dd>
+                            </a>
+                        </dl>
+                        <a href="#">
+                            <h4>Spatial Transcriptonomics</h4>
+                        </a>
+                        <dl>
+                            <a href="#">
+                                <dt>10x Visium</dt>
+                                <dd>Plate based single-cell gene expression</dd>
+                            </a>
+                        </dl>
+                        <a href="#">
+                            <h4>Pooled Cells</h4>
+                        </a>
+                        <dl>
+                            <a href="#">
+                                <dt>Bulk RNA</dt>
+                                <dd>Full length total RNA sequencing</dd>
+                            </a>
+                        </dl>
+                        <dl>
+                            <a href="#">
+                                <dt>
+                                    <h3>Research & Development</h3>
+                                </dt>
+                                <dd>Sit augue a at nisl ullamcorper facillisis cul auctom ulitricies sed donec torquet
+                                    canibutier eros
+                                    mobi.</dd>
+                            </a>
+                        </dl>
+                    </section>
+                </li>
+
+                <li class="cta-button">
+                    <a href="#">Book a Call</a>
+                </li>
+            </menu>
+
+            <aside>
+                <menu aria-label="Secondary Navigation">
+
+                    <li>
+                        <a href="#">
+                            <img class="icon-search" alt="Search"
+                                src="
+              data:image/svg+xml;base64,
+              PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMTIwMHB0IiBoZWlnaHQ9IjEyMDBwdCIgdmVyc2lvbj0iMS4xIiB2aWV3Qm94PSIwIDAgMTIwMCAxMjAwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogPHBhdGggZD0ibTU1MiA4NTJjNzAuMzA5IDAuMDQ2ODc1IDEzOC41NS0yMy43NyAxOTMuNTYtNjcuNTU5bDE4OSAxODkgNTAuODc5LTUwLjg3OS0xODktMTg5YzQzLjgyLTU1LjQwMiA2Ny41NDctMTI0LjA0IDY3LjI5Ny0xOTQuNjctMC4yNTM5MS03MC42NDEtMjQuNDY5LTEzOS4xLTY4LjY4OC0xOTQuMTktNDQuMjE5LTU1LjA4Ni0xMDUuODItOTMuNTM5LTE3NC43My0xMDkuMDctNjguOTE0LTE1LjUyMy0xNDEuMDUtNy4yMDctMjA0LjYyIDIzLjU5NC02My41NyAzMC44MDUtMTE0LjggODIuMjY2LTE0NS4zMyAxNDUuOTctMzAuNTIgNjMuNzAzLTM4LjUyIDEzNS44OC0yMi42ODggMjA0LjcyIDE1LjgyOCA2OC44NDQgNTQuNTUxIDEzMC4yOCAxMDkuODQgMTc0LjI1IDU1LjI4MSA0My45NzMgMTIzLjg1IDY3Ljg4NyAxOTQuNDkgNjcuODI4em0wLTU1MmM2My42NTIgMCAxMjQuNyAyNS4yODUgMTY5LjcxIDcwLjI5MyA0NS4wMDggNDUuMDEyIDcwLjI5MyAxMDYuMDUgNzAuMjkzIDE2OS43MXMtMjUuMjg1IDEyNC43LTcwLjI5MyAxNjkuNzFjLTQ1LjAxMiA0NS4wMDgtMTA2LjA1IDcwLjI5My0xNjkuNzEgNzAuMjkzcy0xMjQuNy0yNS4yODUtMTY5LjcxLTcwLjI5M2MtNDUuMDA4LTQ1LjAxMi03MC4yOTMtMTA2LjA1LTcwLjI5My0xNjkuNzFzMjUuMjg1LTEyNC43IDcwLjI5My0xNjkuNzFjNDUuMDEyLTQ1LjAwOCAxMDYuMDUtNzAuMjkzIDE2OS43MS03MC4yOTN6Ii8+Cjwvc3ZnPgo=            ">
+                        </a>
+                    </li>
+                    <li><a href="#">Support</a></li>
+                    <li><a href="#">Careers</a></li>
+
+                </menu>
+            </aside>
+
+        </div>
+
+    </nav>
+
+    <main>
+        <div class="txt-style-wrapper t1">
+            <div>Biological <span class="grad-mask">Innovation</span> at Scale</div>
+            <div>Biological <span class="grad-mask">Innovation</span> at Scale</div>
+        </div>
+        <div class="txt-style-wrapper t2">
+            <div>Recent <b>Publications</b></div>
+            <div>Recent <b>Publications</b></div>
+        </div>
+        <div class="txt-style-wrapper t3">
+            <div>Recent <b>Publications</b></div>
+            <div>Recent <b>Publications</b></div>
+        </div>
+        <div class="txt-style-wrapper t4">
+            <div>The single-cell RNA sequencing <b>experts</b></div>
+            <div>The single-cell RNA sequencing <b>experts</b></div>
+        </div>
+        <div class="txt-style-wrapper t5">
+            <div>Improve your research with our <b>single-cell RNA</b> sequencing solutions</div>
+            <div>Improve your research with our <b>single-cell RNA</b> sequencing solutions</div>
+        </div>
+        <div class="txt-style-wrapper t6">
+            <div>Consulting is our priority</div>
+            <div>Consulting is our priority</div>
+        </div>
+        <div class="txt-style-wrapper p1">
+            <div>
+                <p>Single-cell T cell receptor sequencing of paired human atherosclerotic plaques and blood reveals
+                    autoimmune-like features of expanded effector T cells</p>
+            </div>
+            <div>
+                <p>Single-cell T cell receptor sequencing of paired human atherosclerotic plaques and blood reveals
+                    autoimmune-like features of expanded effector T cells</p>
+            </div>
+        </div>
+        <div class="txt-style-wrapper p2">
+            <div>
+                <p>We tackle your research challenges with our tailor-made services. Our experienced team is active in
+                    single-cell research since the early days, giving us a unique position in the field. Our innovative
+                    approach allows us to take on </p>
+            </div>
+            <div>
+                <p>We tackle your research challenges with our tailor-made services. Our experienced team is active in
+                    single-cell research since the early days, giving us a unique position in the field. Our innovative
+                    approach allows us to take on </p>
+            </div>
+        </div>
+        <div class="txt-style-wrapper p3">
+            <div>
+                <p>We tackle your research challenges with our tailor-made services. Our experienced team is active in
+                    single-cell research since the early days, giving us a unique position in the field. Our innovative
+                    approach allows us to take on </p>
+            </div>
+            <div>
+                <p>We tackle your research challenges with our tailor-made services. Our experienced team is active in
+                    single-cell research since the early days, giving us a unique position in the field. Our innovative
+                    approach allows us to take on </p>
+            </div>
+        </div>
+        <div class="txt-style-wrapper s1">
+            <div>The Premier Single-Cell Provider</div>
+            <div>The Premier Single-Cell Provider</div>
+        </div>
+        <div class="txt-style-wrapper s2">
+            <div>Why Choose SCD</div>
+            <div>Why Choose SCD</div>
+        </div>
+        <div class="txt-style-wrapper s3">
+            <div>Trusted by</div>
+            <div>Trusted by</div>
+        </div>
+    </main>
+
+    <footer>
+
+        <section>
+            <a href="/">
+                <figure id="logo">
+                    <img alt="Text description of logo and mark" src="
+                data:image/svg+xml;base64,
+                  PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIGlkPSJMYXllcl8yIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1ODUuMzkgMTMyLjE5Ij48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6I2ZmZjt9LmNscy0ye2ZpbGw6I2U0ZmY3MDt9LmNscy0ze2ZpbGw6IzhhN2ZmODt9LmNscy00e2ZpbGw6IzIyZTZjMDt9LmNscy01e2ZpbGw6IzBmNDVjZjt9LmNscy02e2ZpbGw6IzRkNjJlNDt9PC9zdHlsZT48L2RlZnM+PGcgaWQ9IkxheWVyXzEtMiI+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJtMTg1LjMyLDUxLjkyYzQuNywwLDcuMzQtMi41OSw3LjM0LTYuMDQsMC05LjUtMjAuMTMtMy41Ni0yMC4xMy0xNy4xNiwwLTYuNzUsNS4wNy0xMC43NCwxMi41OC0xMC43NCw2LjI2LDAsMTAuNjksMi44MSwxMi4zNiw3LjQ1bC00Ljk2LDEuNzhjLS43LTIuNDMtMy42Ny00LjUzLTcuNS00LjY0LTMuOTktLjA1LTcuMDIsMi4xNi03LjAyLDUuNzcsMCw5LjM0LDIwLjEzLDMuOTQsMjAuMTMsMTcuMTYsMCw2LjE1LTQuNDMsMTEuMDEtMTIuNjMsMTEuMDEtNi42OSwwLTEyLjE0LTMuMjQtMTMuNDQtOC4zN2w0Ljk3LTEuODNjLjY1LDMuMDIsMy42Miw1LjYxLDguMzEsNS42MVoiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Im0yMTksMTguMzV2MzcuNzhoLTUuNFYxOC4zNWg1LjRaIi8+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJtMjY1LjksNTYuMTNoLTUuNWwtMTguODQtMjkuMnYyOS4yaC01LjRWMTguMzVoNS41NmwxOC43OCwyOS4wOXYtMjkuMDloNS40djM3Ljc4WiIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0ibTMwMC4wNywyMi42NmMtNy43NywwLTEzLjYsNS44My0xMy42LDE0LjU3czUuNzgsMTQuNTcsMTMuNDksMTQuNTdjNS42NywwLDEwLjMxLTMuMDIsMTIuMi03Ljcydi00LjFoLTExLjc3di00LjQzaDE3LjI3djguOGMtMi40OCw2Ljk2LTkuMjMsMTIuMTQtMTcuNywxMi4xNC0xMC41OCwwLTE5LTcuOTMtMTktMTkuMjdzOC40Mi0xOS4yNywxOS0xOS4yN2M3LjI5LDAsMTMuOTgsMy42NywxNi44OSwxMC4ybC00Ljc1LDEuNzNjLTIuNy01LjA3LTYuOTYtNy4yMy0xMi4wNC03LjIzWiIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0ibTMzOC41Niw1MS41NGgxNy4yN3Y0LjU5aC0yMi42N1YxOC4zNWg1LjR2MzMuMTlaIi8+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJtMzc1LjU4LDIyLjk0djExLjcxaDE1djQuNTloLTE1djEyLjNoMTkuODZ2NC41OWgtMjUuMjZWMTguMzVoMjUuMjZ2NC41OWgtMTkuODZaIi8+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJtNDUxLjI2LDE3Ljk3YzcuNTYsMCwxMy44MiwzLjY3LDE2Ljg5LDEwLjI1bC00LjM3LDEuNTZjLTIuNDgtNC45Ni03LjYxLTcuMTItMTIuNDEtNy4xMi03LjcyLDAtMTMuNTUsNS42MS0xMy41NSwxNC41N3M1LjgzLDE0LjU3LDEzLjU1LDE0LjU3YzQuOTEsMCwxMC4xNS0yLjIxLDEyLjg1LTguMWw0LjM3LDEuNTFjLTMuMjQsNy42Ni05LjU1LDExLjI4LTE3LjMyLDExLjI4LTEwLjU4LDAtMTguOTQtNy45OS0xOC45NC0xOS4yN3M4LjM3LTE5LjI3LDE4Ljk0LTE5LjI3WiIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0ibTQ4OS43NCwyMi45NHYxMS43MWgxNXY0LjU5aC0xNXYxMi4zaDE5Ljg2djQuNTloLTI1LjI2VjE4LjM1aDI1LjI2djQuNTloLTE5Ljg2WiIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0ibTUzMS4wOSw1MS41NGgxNy4yN3Y0LjU5aC0yMi42N1YxOC4zNWg1LjR2MzMuMTlaIi8+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJtNTY4LjEyLDUxLjU0aDE3LjI3djQuNTloLTIyLjY3VjE4LjM1aDUuNHYzMy4xOVoiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Im0yMDMuNiw5NS4zOGMwLDEwLjc5LTYuOTEsMTcuMjktMTguMzksMTcuMjloLTExLjQ4di0zNC43OWgxMS40OGMxMS40OCwwLDE4LjM5LDYuNjYsMTguMzksMTcuNDlabS00LjAzLDBjMC04LjgtNC45Mi0xNC4wMS0xNC4zNi0xNC4wMWgtNy41djI3LjgzaDcuNWM5LjQ0LDAsMTQuMzYtNS4wNywxNC4zNi0xMy44MloiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Im0yMjMuMzcsNzcuODl2MzQuNzloLTMuOTh2LTM0Ljc5aDMuOThaIi8+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJtMjUxLjUsMTA5LjY0YzQuNzIsMCw3LjQxLTIuNjgsNy40MS02LjIxLDAtOS40OS0xOC44OS0zLjY4LTE4Ljg5LTE2LjIsMC01Ljk2LDQuNDctOS42OSwxMS4yMy05LjY5LDUuODIsMCw5LjY0LDIuNzMsMTEuMDMsNi43MWwtMy41MywxLjM0Yy0uNzUtMi4yOS0zLjU4LTQuNjItNy42NS00LjY3LTMuOTgtLjA1LTcuMTEsMi4xNC03LjExLDUuOTYsMCw5LjQ0LDE4Ljg5LDQuMDgsMTguODksMTYuMjUsMCw1LjQyLTMuODgsOS44OS0xMS4zMyw5Ljg5LTYuMTYsMC0xMC43My0zLjA4LTExLjk4LTcuNmwzLjUzLTEuMzljLjY1LDIuNzgsMy40OCw1LjYyLDguNCw1LjYyWiIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0ibTI5NC4xOCw3Ny41NGM3LjIxLDAsMTIuODIsMy40OCwxNS41Niw5LjU0bC0zLjIzLDEuMTljLTIuMjQtNC44Mi03LjA2LTcuMTYtMTIuMzMtNy4xNi03LjQ2LDAtMTMuMTIsNS4zMi0xMy4xMiwxNC4xNnM1LjY3LDE0LjE2LDEzLjEyLDE0LjE2YzUuMzcuMDUsMTAuMjktMi41MywxMi42Ny03Ljk1bDMuMjMsMS4xOWMtMi44Myw2LjgxLTguNSwxMC4zNC0xNS45LDEwLjM0LTkuNjksMC0xNy4yLTcuMzUtMTcuMi0xNy43NHM3LjUtMTcuNzQsMTcuMi0xNy43NFoiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Im0zMjMuNDUsOTUuMjhjMC0xMC40NCw3LjYtMTcuNzQsMTcuMzQtMTcuNzRzMTcuMjUsNy4zMSwxNy4yNSwxNy43NC03LjQ2LDE3Ljc0LTE3LjI1LDE3Ljc0LTE3LjM0LTcuMy0xNy4zNC0xNy43NFptMzAuNTEsMGMwLTguODUtNS42Ny0xNC4yNi0xMy4xNy0xNC4yNnMtMTMuMjcsNS40Mi0xMy4yNywxNC4yNiw1LjcyLDE0LjI2LDEzLjI3LDE0LjI2LDEzLjE3LTUuNDcsMTMuMTctMTQuMjZaIi8+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJtMzk5LjY4LDc3Ljg5bC0xMy4yMiwzNC43OWgtNC41N2wtMTMuMDItMzQuNzloNC4yMmwxMS4xOCwzMC41NiwxMS4xOC0zMC41Nmg0LjIyWiIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0ibTQxOC43Niw4MS4zN3YxMS44OGgxNC4zNnYzLjQ4aC0xNC4zNnYxMi40N2gxOC44NHYzLjQ4aC0yMi44MXYtMzQuNzloMjIuODF2My40OGgtMTguODRaIi8+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJtNDc4LjU5LDg4LjE3YzAsNC41Ny0yLjQ4LDguNzUtOC4zLDkuOTRsOC43NSwxNC41NmgtNC41MmwtOC4zLTE0LjIxaC03Ljc1djE0LjIxaC0zLjk4di0zNC43OWgxMi4yM2M4LjEsMCwxMS44OCw0LjU3LDExLjg4LDEwLjI5Wm0tMTEuODgtNi44MWgtOC4yNXYxMy42Mmg4LjNjNS40MiwwLDcuOC0yLjczLDcuOC02Ljgxcy0yLjI5LTYuODEtNy44NS02LjgxWiIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0ibTQ5OC43Nyw3Ny44OXYzNC43OWgtMy45OHYtMzQuNzloMy45OFoiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Im01MjAuNjMsODEuMzd2MTEuODhoMTQuMzZ2My40OGgtMTQuMzZ2MTIuNDdoMTguODR2My40OGgtMjIuODF2LTM0Ljc5aDIyLjgxdjMuNDhoLTE4Ljg0WiIvPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0ibTU2Ni41LDEwOS42NGM0LjcyLDAsNy40MS0yLjY4LDcuNDEtNi4yMSwwLTkuNDktMTguODktMy42OC0xOC44OS0xNi4yLDAtNS45Niw0LjQ3LTkuNjksMTEuMjMtOS42OSw1LjgxLDAsOS42NCwyLjczLDExLjAzLDYuNzFsLTMuNTMsMS4zNGMtLjc1LTIuMjktMy41OC00LjYyLTcuNjUtNC42Ny0zLjk4LS4wNS03LjExLDIuMTQtNy4xMSw1Ljk2LDAsOS40NCwxOC44OCw0LjA4LDE4Ljg4LDE2LjI1LDAsNS40Mi0zLjg4LDkuODktMTEuMzMsOS44OS02LjE2LDAtMTAuNzQtMy4wOC0xMS45OC03LjZsMy41My0xLjM5Yy42NSwyLjc4LDMuNDgsNS42Miw4LjQsNS42MloiLz48cGF0aCBjbGFzcz0iY2xzLTMiIGQ9Im02OC4xOCwzNS4wMmMyMC4yOC0xMC45MiwzOC45MS0xMC45Niw1MC4xNC05LjQxLS40Mi0uNTUtLjg0LTEuMDktMS4yOC0xLjYyLTUuOTgtMi41OC0yMy4wNS04LjE4LTQ2LjY2LTEuMTYtMTQuMjQsNC4yNC0yNC44MywxMS44NC0zMC44OCwxNy4wNnYyMS4wN2M1LjQ3LTguMTMsMTQuNTItMTguMzMsMjguNjctMjUuOTVaIi8+PHBhdGggY2xhc3M9ImNscy0yIiBkPSJtNzAuMiw1MC42OGMxOS45NC0xNi4zLDQwLjQ5LTIwLjQxLDUwLjc4LTIxLjQyLS4wMy0uMDUtLjA3LS4xLS4xLS4xNS0xMC4yNi0xLjgxLTMwLjAxLTIuOTEtNTEuMjksOC41NC0xNS45Niw4LjU5LTI1LjI3LDIwLjg1LTMwLjA5LDI5LjA2djI4LjUxYzQuMDYtMTEuNzcsMTIuNzctMjkuODksMzAuNy00NC41NFoiLz48cGF0aCBjbGFzcz0iY2xzLTYiIGQ9Im0xMTIuNTksMTkuMTNjLTEuNzYtMS43NC0zLjYzLTMuMzgtNS41OC00LjkyLTUuNzgtMi44My0xNi45LTYuNC0zNC41Ni00LjgyLTEzLjY1LDEuMjMtMjYuNDEsNS41OC0zMi45NSw4LjEzdjE4LjM5YzYuNDUtNS4yNiwxNi42MS0xMS45OCwzMC4wMi0xNS45NywxOS40MS01Ljc4LDM0LjQxLTMuNDUsNDMuMDctLjgyWiIvPjxwYXRoIGNsYXNzPSJjbHMtNCIgZD0ibTEyMi44MiwzMi4xNmMtOS4yNS43Ny0zMC41Myw0LjM1LTUwLjcxLDIwLjg1LTI0LjUyLDIwLjA0LTMxLjI2LDQ2Ljc1LTMyLjYsNTMuMzR2MjAuMjhjOC4xNCwzLjU4LDE3LjEzLDUuNTcsMjYuNTksNS41NywzNi41LDAsNjYuMS0yOS41OSw2Ni4xLTY2LjEsMC0xMi40MS0zLjQzLTI0LjAyLTkuMzgtMzMuOTRaIi8+PHBhdGggY2xhc3M9ImNscy01IiBkPSJtNzIuMTksNi40YzEwLjIzLS45MiwxOC4zNS0uMTksMjQuNjIsMS4xNy05LjE4LTQuODMtMTkuNjItNy41Ny0zMC43MS03LjU3LTkuNDYsMC0xOC40NSwxLjk5LTI2LjU5LDUuNTd2OC43M2M2Ljk0LTIuNjUsMTkuMjYtNi42OCwzMi42OC03Ljg5WiIvPjxwYXRoIGNsYXNzPSJjbHMtNCIgZD0ibTMzLjMxLDEyMy40OFY4LjcyQzEzLjQxLDIwLjExLDAsNDEuNTMsMCw2Ni4xczEzLjQxLDQ1Ljk5LDMzLjMxLDU3LjM4WiIvPjwvZz48L3N2Zz4=
+              ">
+                    <figcaption>
+                        <h1>Single Cell Discoveries</h1>
+                    </figcaption>
+                </figure>
+            </a>
+            <address>
+                <ul>
+                    <li>Varrolaan 122</li>
+                    <li>3584 BW Utrecht</li>
+                    <li>The Netherlands</li>
+                </ul>
+            </address>
+        </section>
+        <section>
+            <menu>
+                <li>
+                    <h2>Our Approach</h2>
+                </li>
+                <li><a href="#">Data Analysis</a></li>
+            </menu>
+            <menu>
+                <li>
+                    <h2>Services</h2>
+                </li>
+                <li><a href="#">SORT-Seq</a></li>
+                <li><a href="#">10X Genomics</a></li>
+                <li><a href="#">VASA-Seq</a></li>
+                <li><a href="#">10X Genomics Visium</a></li>
+                <li><a href="#">Bulk RNA Sequencing</a></li>
+            </menu>
+        </section>
+        <section>
+            <menu>
+                <li>
+                    <h2>Applications</h2>
+                </li>
+                <li><a href="#">Target Discovery & Validation</a></li>
+                <li><a href="#">Mode & Mechanism Action</a></li>
+                <li><a href="#">Characterize Therepuetic Effect</a></li>
+                <li><a href="#">Target Safety Assesment</a></li>
+                <li><a href="#">Cell Therapy</a></li>
+                <li><a href="#">Gene Therapy</a></li>
+            </menu>
+            <menu>
+                <li>
+                    <h2>Research Areas</h2>
+                </li>
+                <li><a href="#">Oncology</a></li>
+                <li><a href="#">Immunology</a></li>
+                <li><a href="#">Developmental Biology</a></li>
+                <li><a href="#">Nueroscience</a></li>
+            </menu>
+        </section>
+        <section>
+            <menu>
+                <li>
+                    <h2>About</h2>
+                </li>
+                <li><a href="#">Careers</a></li>
+            </menu>
+            <menu>
+                <li>
+                    <h2>Resources</h2>
+                </li>
+                <li><a href="#">Publications</a></li>
+                <li><a href="#">Case Studies</a></li>
+                <li><a href="#">Resource Library</a></li>
+                <li><a href="#">Blog</a></li>
+            </menu>
+        </section>
+        <section>
+            <menu>
+                <li>
+                    <h2>Support</h2>
+                </li>
+                <li><a href="#">Support Articles</a></li>
+                <li><a href="#">Getting Started</a></li>
+            </menu>
+            <menu>
+                <li>
+                    <h2>Contact</h2>
+                </li>
+                <li class="cta-button">
+                    <a href="#">Book a Call</a>
+                </li>
+                <li><a href="#">Privacy</a></li>
+                <li><a href="#">Cookies</a></li>
+                <li><a href="#">Terms</a></li>
+            </menu>
+        </section>
+    </footer>
+
+    <script>
+        $(function () {
+            function setMenu(element) {
+                navItem = $(element).parent('li')
+                navMenu = navItem.children('section')
+
+                baseREM = $('body').css('font-size');
+                borderPad = parseFloat(baseREM) / 4;
+                console.log(borderPad)
+
+                offsetRight = Math.ceil($(window).width() - (navMenu.offset().left + navMenu.outerWidth()) - borderPad);
+                navMaxHeight = Math.abs(((navMenu.offset().top - $(document).scrollTop()) - $(window).height()))
+
+                navMenu.css('max-height', navMaxHeight)
+
+                console.log(offsetRight)
+                if (offsetRight < 0) {
+                    navMenu.css('left', offsetRight + 'px')
+                }
+            }
+            $(window).bind('load resize', function () {
+                $('nav section').css('left', 'auto')
+                $('nav button').each(function () {
+                    setMenu(this)
+                })
+            })
+        });
+    </script>
+
+</body>
+
+</html>

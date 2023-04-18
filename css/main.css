@@ -1,0 +1,458 @@
+dl, dt, dd, menu {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-size: inherit;
+}
+
+input, button {
+  font-family: "Albert Sans", sans-serif;
+}
+
+input[type=radio] {
+  display: none;
+}
+
+:root {
+  font-size: 1.25vw;
+}
+
+body {
+  margin: 0;
+  font-family: "Albert Sans", sans-serif;
+  border-right: 0.25rem solid #E3FF53;
+}
+
+figure#logo {
+  margin: 0;
+  height: 3rem;
+}
+figure#logo img {
+  height: 100%;
+}
+figure#logo h1 {
+  font-size: 0;
+}
+
+menu {
+  margin: 0;
+  display: flex;
+  align-items: flex-start;
+}
+
+.cta-button a {
+  background-color: #E3FF53;
+  color: #0A0A17;
+  padding: 0.65rem 1rem;
+  margin-inline-start: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  font-weight: 600;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  transition-property: color, background-color;
+  transition-duration: 0.4s;
+}
+.cta-button a:hover {
+  background-color: #1045D3;
+  color: #FFFFFF;
+}
+
+nav {
+  background-color: #0A0A17;
+  position: sticky;
+  top: 0;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  border-bottom: 0.1em solid rgba(194, 192, 209, 0.2509803922);
+  gap: 2rem;
+  padding: 0 6rem;
+  z-index: 1;
+}
+nav .list-wrapper {
+  display: flex;
+  flex-direction: column-reverse;
+  align-content: flex-end;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 1rem;
+}
+nav .subnav-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  flex-basis: 50%;
+}
+nav menu {
+  align-items: flex-start;
+  gap: 2rem;
+}
+nav menu li:hover,
+nav menu li:focus-within {
+  overflow: visible;
+}
+nav menu li {
+  list-style: none;
+  position: relative;
+}
+nav menu li a {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+nav menu li button {
+  padding: 0 0 1.6rem 0;
+  line-height: 1;
+  z-index: 1;
+  font-size: inherit;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.8666666667);
+  background-color: transparent;
+  border: none;
+  margin: 0;
+}
+nav menu li button h2 {
+  font-weight: 400;
+  letter-spacing: 0.01rem;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+nav menu li button h2:after {
+  content: "";
+  position: absolute;
+  right: -0.75rem;
+  margin: auto 0;
+  height: 0.25rem;
+  width: 0.25rem;
+  border-right: 0.15rem solid #E3FF53;
+  border-bottom: 0.15rem solid #E3FF53;
+  transform: rotate(-45deg);
+  transition: transform ease-in-out 0.2s;
+}
+nav menu li button:hover,
+nav menu li button:focus {
+  color: #FFFFFF;
+}
+nav menu li button:hover h2:after,
+nav menu li button:focus h2:after {
+  transform: rotate(45deg);
+}
+nav menu li section:hover,
+nav menu li section:focus-within,
+nav menu li button:hover + section,
+nav menu li button:focus + section {
+  opacity: 1;
+  height: auto;
+}
+nav menu li section {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  color: #0A0A17;
+  background-color: #FFFFFF;
+  position: absolute;
+  top: 2.6rem;
+  margin-left: -2rem;
+  opacity: 0;
+  width: 24rem;
+  height: 0;
+  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.1254901961);
+  border-radius: 0 0 2rem 0;
+  z-index: 0;
+  transition: opacity ease-in-out 0.4s;
+}
+nav menu li section dl {
+  margin-block-start: 0.75rem;
+}
+nav menu li section dl > a + a {
+  margin-block-start: 0.5rem;
+}
+nav menu li section dl:first-child, nav menu li section dl:last-child {
+  padding: 1em 2em;
+  background-color: #F2F1FF;
+  border-top: 0.1em solid #dcdde4;
+  margin: 0;
+}
+nav menu li section dl:first-child {
+  border-top: 0.25rem solid #E3FF53;
+}
+nav menu li section dl:last-child {
+  background-color: #FFFFFF;
+  padding-block-end: 1.5rem;
+}
+nav menu li section dl:last-child dt a {
+  padding: 0;
+}
+nav menu li section a {
+  color: #0A0A17;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+nav menu li section > a {
+  border-bottom: 0.1rem solid #dcdde4;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+nav menu li section a + a {
+  margin-block-start: 0.25rem;
+}
+nav menu li section a + dl {
+  padding-inline-start: 3rem;
+  padding-block-end: 0.5rem;
+}
+nav menu li section dl dd:last-child {
+  margin-block-end: 0.5rem;
+}
+nav menu li section a h4 {
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
+  font-weight: 400;
+  font-size: 0.75rem;
+  padding: 1rem 2rem;
+}
+nav menu li section a dt {
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding-block-start: 0.5rem;
+}
+nav menu li section dt + dd {
+  margin-block-start: 0.25rem;
+}
+nav menu li section dd {
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  color: #0A0A17;
+}
+nav menu li section dt h3 {
+  font-size: 1.125rem;
+  text-transform: none;
+  font-weight: 600;
+  letter-spacing: 0.01rem;
+  margin-block-end: 0.5rem;
+}
+nav aside {
+  padding-block-start: 0.5rem;
+}
+nav aside menu {
+  justify-content: flex-end;
+}
+nav aside menu a {
+  font-size: 0.875rem;
+  color: #dcdde4;
+  display: flex;
+  align-items: center;
+}
+nav aside menu a img.icon-search {
+  height: 1.125rem;
+  width: 1.125rem;
+  filter: invert(1);
+}
+nav .applications section {
+  flex-direction: row;
+  width: 48rem;
+}
+nav .applications section .subnav-wrapper dl:last-child {
+  height: 100%;
+}
+nav .applications section .subnav-wrapper:nth-child(odd) dl {
+  background-color: #FFFFFF;
+}
+nav .applications section .subnav-wrapper:nth-child(even) dl {
+  background-color: #F2F1FF;
+}
+
+main b {
+  font-weight: 500;
+}
+main .txt-style-wrapper {
+  display: flex;
+}
+main .txt-style-wrapper > div {
+  flex-basis: 50%;
+  padding: 3rem 6rem;
+}
+main .txt-style-wrapper > div .grad-mask {
+  font-weight: 300;
+  background-image: linear-gradient(90deg, #8E7FFC, #21EAC5);
+  background-clip: text;
+  color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+main .txt-style-wrapper div:nth-child(even) {
+  background-color: #0A0A17;
+  color: #FFFFFF;
+}
+main .txt-style-wrapper p {
+  max-width: 24rem;
+  margin: 0;
+  padding: 0;
+}
+main .txt-style-wrapper:first-child div {
+  padding-block-start: 6rem;
+}
+main .txt-style-wrapper:last-child div {
+  padding-block-end: 6rem;
+}
+main .t1 {
+  font-size: 6rem;
+  font-weight: 100;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+main .t2 {
+  font-size: 4rem;
+  font-weight: 200;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+main .t3 {
+  font-size: 3rem;
+  font-weight: 200;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+main .t4 {
+  font-size: 2.5rem;
+  font-weight: 200;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+}
+main .t5 {
+  font-size: 2.25rem;
+  font-weight: 200;
+  letter-spacing: 0;
+  line-height: 1.275;
+}
+main .t6 {
+  font-size: 2rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  line-height: 1.3;
+}
+main .p1 {
+  font-size: 1.15rem;
+  letter-spacing: auto;
+  font-weight: 300;
+  line-height: 1.4;
+}
+main .p2 {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+main .p3 {
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+main .s1 {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+main .s1 div:nth-child(even) {
+  color: #21EAC5;
+}
+main .s2 {
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 0.875rem;
+}
+main .s2 div:nth-child(even) {
+  color: #93e4d5;
+}
+main .s3 {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.75rem;
+}
+
+footer {
+  display: flex;
+  gap: 2.75rem;
+  background-color: #0A0A17;
+  color: #FFFFFF;
+  padding: 4rem 6rem;
+  border-top: 0.1em solid rgba(194, 192, 209, 0.2509803922);
+}
+footer .cta-button {
+  margin: 1rem 0 2rem;
+}
+footer .cta-button a {
+  margin: 0;
+}
+footer address ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+footer address ul li {
+  font-style: normal;
+  color: #C2C0D1;
+  line-height: 1.5;
+}
+footer section:first-child {
+  margin-inline-end: auto;
+}
+footer section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+footer menu {
+  flex-direction: column;
+  gap: 0.25rem;
+}
+footer menu h2 {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-weight: 400;
+  font-size: 0.875rem;
+  margin-block-end: 0.25rem;
+}
+footer menu a {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 0.75rem;
+  color: #C2C0D1;
+  letter-spacing: 0.01em;
+  line-height: 1.5;
+}
+
+@media (max-width: 1440px) {
+  :root {
+    font-size: 1.0625rem;
+  }
+  nav, footer {
+    padding-inline: 4rem;
+  }
+  main .txt-style-wrapper > div {
+    padding-inline: 4rem;
+  }
+}
+@media (max-width: 1280px) {
+  :root {
+    font-size: 1rem;
+  }
+  nav, footer {
+    padding-inline: 2rem;
+  }
+  main .txt-style-wrapper > div {
+    padding-inline: 2rem;
+  }
+}
+@media (max-width: 1024px) {
+  :root {
+    font-size: 0.9375rem;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
