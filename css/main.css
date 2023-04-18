@@ -1,15 +1,24 @@
-dl, dt, dd, menu {
+dl,
+dt,
+dd,
+menu {
   margin: 0;
   padding: 0;
   list-style-type: none;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 0;
   font-size: inherit;
 }
 
-input, button {
+input,
+button {
   font-family: "Albert Sans", sans-serif;
 }
 
@@ -59,17 +68,40 @@ menu {
 }
 .cta-button a:hover {
   background-color: #1045D3;
-  color: #FFFFFF;
+  color: #FFFFFF !important;
+}
+
+nav#light-mode {
+  color: #0A0A17;
+  background-color: #FFFFFF;
+  border-color: #C2C0D1;
+  z-index: 0;
+}
+nav#light-mode menu li a {
+  color: #0A0A17;
+}
+nav#light-mode menu li button {
+  color: #0A0A17;
+}
+nav#light-mode menu li button h2:after {
+  border-color: #8E7FFC;
+}
+nav#light-mode aside menu a {
+  color: #383745;
+}
+nav#light-mode img.icon-search {
+  filter: invert(0);
 }
 
 nav {
+  color: #FFFFFF;
   background-color: #0A0A17;
   position: sticky;
   top: 0;
   color: #FFFFFF;
   display: flex;
   align-items: center;
-  border-bottom: 0.1em solid rgba(194, 192, 209, 0.2509803922);
+  border-bottom: 0.1em solid #383745;
   gap: 2rem;
   padding: 0 6rem;
   z-index: 1;
@@ -172,7 +204,8 @@ nav menu li section dl {
 nav menu li section dl > a + a {
   margin-block-start: 0.5rem;
 }
-nav menu li section dl:first-child, nav menu li section dl:last-child {
+nav menu li section dl:first-child,
+nav menu li section dl:last-child {
   padding: 1em 2em;
   background-color: #F2F1FF;
   border-top: 0.1em solid #dcdde4;
@@ -431,7 +464,8 @@ footer menu a {
   :root {
     font-size: 1.0625rem;
   }
-  nav, footer {
+  nav,
+  footer {
     padding-inline: 4rem;
   }
   main .txt-style-wrapper > div {
@@ -442,7 +476,8 @@ footer menu a {
   :root {
     font-size: 1rem;
   }
-  nav, footer {
+  nav,
+  footer {
     padding-inline: 2rem;
   }
   main .txt-style-wrapper > div {
