@@ -57,7 +57,7 @@ menu {
   background-color: #E3FF53;
   color: #0A0A17;
   padding: 0.65rem 1rem;
-  margin-inline-start: 1.5rem;
+  margin-inline-start: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
   font-weight: 600;
@@ -201,12 +201,10 @@ nav menu li button h2 {
   display: flex;
   align-items: center;
   white-space: nowrap;
+  gap: 0.4rem;
 }
 nav menu li button h2:after {
   content: "";
-  position: absolute;
-  right: -0.75rem;
-  margin: auto 0;
   height: 0.25rem;
   width: 0.25rem;
   border-right: 0.15rem solid #E3FF53;
@@ -774,6 +772,9 @@ footer menu a {
   footer {
     padding-inline: 2rem;
   }
+  nav menu {
+    gap: 1.25rem;
+  }
   main .txt-style-wrapper > div {
     padding-inline: 2rem;
   }
@@ -781,11 +782,6 @@ footer menu a {
   main .input-button-wrapper,
   main .text-input-wrapper {
     padding-inline: 2rem;
-  }
-}
-@media (max-width: 1024px) {
-  :root {
-    font-size: 0.9375rem;
   }
 }
 

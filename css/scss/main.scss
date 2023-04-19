@@ -80,7 +80,7 @@ menu {
     background-color: $yellow;
     color: $black;
     padding: 0.65rem 1rem;
-    margin-inline-start: 1.5rem;
+    margin-inline-start: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.1rem;
     font-weight: 600;
@@ -178,7 +178,6 @@ nav {
     align-content: flex-end;
     flex-wrap: wrap;
     width: 100%;
-    ;
     gap: 1rem;
   }
 
@@ -262,13 +261,11 @@ nav {
           display: flex;
           align-items: center;
           white-space: nowrap;
+          gap: 0.4rem;
         }
 
         h2:after {
           content: "";
-          position: absolute;
-          right: -0.75rem;
-          margin: auto 0;
           height: 0.25rem;
           width: 0.25rem;
           border-right: 0.15rem solid $yellow;
@@ -960,7 +957,11 @@ footer {
   footer {
     padding-inline: 2rem;
   }
-
+  nav {
+    menu {
+      gap: 1.25rem;
+    }
+  }
   main {
     .txt-style-wrapper {
       >div {
@@ -976,12 +977,7 @@ footer {
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1023px) {
   :root {
-    font-size: 0.9375rem;
   }
-}
-
-@media (min-width: 1023px) {
-  :root {}
 }
