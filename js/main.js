@@ -19,8 +19,11 @@ $(function () {
     }
     $(window).bind('load resize', function () {
         $('nav section').css('left', 'auto')
-        $('nav button').each(function () {
+        $('nav #primary button').each(function () {
             setMenu(this)
         })
+    })
+    $('nav aside button').focus(function() {
+        $(this).siblings('input').focus()
     })
 });
