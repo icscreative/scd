@@ -58,14 +58,14 @@ input[type="radio"] {
 }
 
 :root {
-  font-size: 1.25vw;
+  font-size: 1.05vw;
 }
 
 body {
   margin: 0;
   font-family: 'Albert Sans', sans-serif;
   border-right: 0.25rem solid $yellow;
-  color: $black;
+  color: $blue;
 }
 
 figure#logo {
@@ -581,6 +581,13 @@ nav {
 
 main {
   position: relative;
+  color: $blue;
+  p {
+    span {
+      display: block;
+      max-width: 48ch;
+    }
+  }
 
   section+section {
     padding-block-start: 2rem;
@@ -1080,11 +1087,12 @@ footer {
     }
   }
 }
-
-@media (max-width: 1440px) {
+@media (max-width: 1680px) {
   :root {
-    font-size: 1.0625rem;
+    font-size: 1rem;
   }
+}
+@media (max-width: 1440px) {
 
   nav,
   footer {
@@ -1107,9 +1115,6 @@ footer {
 }
 
 @media (max-width: 1280px) {
-  :root {
-    font-size: 1rem;
-  }
 
   nav,
   footer {
@@ -1138,8 +1143,6 @@ footer {
 }
 
 @media (max-width: 1023px) {
-  :root {}
-
   nav,
   footer {
     flex-direction: column;
