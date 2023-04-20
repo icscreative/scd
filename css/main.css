@@ -903,10 +903,13 @@ footer menu a:focus {
 
 @media (max-width: 1680px) {
   :root {
-    font-size: 1rem;
+    font-size: 1.125rem;
   }
 }
 @media (max-width: 1440px) {
+  :root {
+    font-size: 1rem;
+  }
   nav,
   footer {
     padding-inline: 4rem;

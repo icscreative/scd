@@ -1089,11 +1089,13 @@ footer {
 }
 @media (max-width: 1680px) {
   :root {
-    font-size: 1rem;
+    font-size: $md;
   }
 }
 @media (max-width: 1440px) {
-
+  :root {
+    font-size: 1rem;
+  }
   nav,
   footer {
     padding-inline: 4rem;
