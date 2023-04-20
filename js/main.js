@@ -24,4 +24,7 @@ $(function () {
     $('nav aside button').focus(function() {
         $(this).siblings('input').focus()
     })
+    $('nav .hamburger button').focus(function() {
+        $('nav#light-mode .list-wrapper').focus()
+    })
 });
