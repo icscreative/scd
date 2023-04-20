@@ -1475,6 +1475,7 @@ footer {
   nav {
     .list-wrapper {
       background-position: 0;
+      margin-block-start: 4rem;
     }
     figure#logo {
       height: 2rem;
@@ -1482,8 +1483,30 @@ footer {
     menu {
       gap: 1rem;
     }
-  }
+    .hamburger {
+      button {
+        height: 2rem;
+        width: 2rem;
+        padding: 0.65rem 0.5rem;
+      }
+    }
 
+  }
+  nav:focus-within {
+    .hamburger{
+      button{
+        span:nth-child(1) {
+          transform: translateY(0.315rem) rotate(-45deg);
+        }
+        span:nth-child(2) {
+          opacity: 0;
+        }
+        span:nth-child(3) {
+          transform: translateY(-0.315rem) rotate(45deg);
+        }
+      }
+    }
+  }
   footer {
     .menu-wrapper {
       .menu-sub-wrapper {

@@ -1161,11 +1161,50 @@ footer menu a {
   }
 }
 @media (max-width: 480px) {
+  nav,
+  footer {
+    padding-inline: 1rem;
+  }
+  nav .list-wrapper {
+    background-position: 0;
+    margin-block-start: 4rem;
+  }
+  nav figure#logo {
+    height: 2rem;
+  }
+  nav menu {
+    gap: 1rem;
+  }
+  nav .hamburger button {
+    height: 2rem;
+    width: 2rem;
+    padding: 0.65rem 0.5rem;
+  }
+  nav:focus-within .hamburger button span:nth-child(1) {
+    transform: translateY(0.315rem) rotate(-45deg);
+  }
+  nav:focus-within .hamburger button span:nth-child(2) {
+    opacity: 0;
+  }
+  nav:focus-within .hamburger button span:nth-child(3) {
+    transform: translateY(-0.315rem) rotate(45deg);
+  }
   footer .menu-wrapper .menu-sub-wrapper {
     flex-direction: column;
   }
   footer .menu-wrapper .menu-sub-wrapper section {
     flex-direction: column;
+  }
+  main .txt-style-wrapper > p {
+    padding-inline: 1rem;
+  }
+  main .txt-style-wrapper p:first-child, main .txt-style-wrapper p:last-child {
+    padding-block: 1rem;
+  }
+  main .color-wrapper,
+  main .input-button-wrapper,
+  main .text-input-wrapper {
+    padding-inline: 1rem;
   }
 }
 
