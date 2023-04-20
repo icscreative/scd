@@ -1097,8 +1097,14 @@ footer menu a {
   nav .list-wrapper menu li section {
     width: 20rem;
   }
+  nav .list-wrapper menu .cta-button a {
+    font-size: 1rem;
+  }
   nav .list-wrapper .wide section {
     width: 20rem;
+  }
+  nav .list-wrapper aside menu li a {
+    font-size: 1.125rem;
   }
   main .txt-style-wrapper > p {
     padding-inline: 2rem;
