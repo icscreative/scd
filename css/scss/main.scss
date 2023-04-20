@@ -341,7 +341,19 @@ nav {
         border-radius: 0 0 2rem 0;
         z-index: 2;
         transition: opacity ease-in-out 0.4s;
-
+        .mobile-back {
+          button {
+            width: 100%;
+            display: flex;
+            align-items: flex-start;
+            background-color: $yellow;
+            color: $black;
+            margin: 0;
+            padding: 0.125rem 2rem;
+            font-size: 0;
+            pointer-events: none;
+          }
+        }
         dl {
           margin-block-start: 0.75rem;
         }
@@ -350,16 +362,12 @@ nav {
           margin-block-start: 0.5rem
         }
 
-        dl:first-child,
+        dl.header,
         dl:last-child {
           padding: 1em 2em;
           background-color: $ice;
           border-top: 0.1em solid $grey;
           margin: 0;
-        }
-
-        dl:first-child {
-          border-top: 0.25rem solid $yellow;
         }
 
         dl:last-child {
@@ -459,9 +467,13 @@ nav {
   }
 
   .wide section {
-    flex-direction: row;
+    flex-direction: column;
     width: 48rem;
-
+    .wide-wrap {
+      display: flex;
+      flex-direction: row;
+      height: 100%;
+    }
     .subnav-wrapper {
       dl:last-child {
         height: 100%;
@@ -1213,6 +1225,16 @@ footer {
       .wide section {
         flex-direction: column;
         width: 28rem;
+        .wide-wrap{
+          flex-direction: column;
+        }
+      }
+      .mobile-back {
+        button {
+          font-size: $sm;
+          padding-block:0.5rem;
+          pointer-events: all;
+        }
       }
     }
 
@@ -1304,6 +1326,11 @@ footer {
           section {
             width: 20rem;
           }
+        }
+      }
+      .wide {
+        section{
+          width: 20rem;
         }
       }
     }

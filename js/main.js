@@ -17,7 +17,7 @@ $(function () {
     }
     $(window).bind('load resize', function () {
         $('nav section').css('left', 'auto')
-        $('nav #primary button').each(function () {
+        $('nav #primary button.open').each(function () {
             setMenu(this)
         })
     })
@@ -25,6 +25,9 @@ $(function () {
         $(this).siblings('input').focus()
     })
     $('nav .hamburger button').focus(function() {
+        $('nav#light-mode .list-wrapper').focus()
+    })
+    $('nav section button.close').click(function() {
         $('nav#light-mode .list-wrapper').focus()
     })
 });

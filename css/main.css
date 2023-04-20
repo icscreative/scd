@@ -266,21 +266,29 @@ nav menu li section {
   z-index: 2;
   transition: opacity ease-in-out 0.4s;
 }
+nav menu li section .mobile-back button {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  background-color: #E3FF53;
+  color: #0A0A17;
+  margin: 0;
+  padding: 0.125rem 2rem;
+  font-size: 0;
+  pointer-events: none;
+}
 nav menu li section dl {
   margin-block-start: 0.75rem;
 }
 nav menu li section dl > a + a {
   margin-block-start: 0.5rem;
 }
-nav menu li section dl:first-child,
+nav menu li section dl.header,
 nav menu li section dl:last-child {
   padding: 1em 2em;
   background-color: #F2F1FF;
   border-top: 0.1em solid #dcdde4;
   margin: 0;
-}
-nav menu li section dl:first-child {
-  border-top: 0.25rem solid #E3FF53;
 }
 nav menu li section dl:last-child {
   background-color: #FFFFFF;
@@ -360,8 +368,13 @@ nav aside menu a img.icon-search {
   filter: invert(1);
 }
 nav .wide section {
-  flex-direction: row;
+  flex-direction: column;
   width: 48rem;
+}
+nav .wide section .wide-wrap {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
 }
 nav .wide section .subnav-wrapper dl:last-child {
   height: 100%;
@@ -977,6 +990,14 @@ footer menu a {
     flex-direction: column;
     width: 28rem;
   }
+  nav .list-wrapper .wide section .wide-wrap {
+    flex-direction: column;
+  }
+  nav .list-wrapper .mobile-back button {
+    font-size: 0.875rem;
+    padding-block: 0.5rem;
+    pointer-events: all;
+  }
   nav menu {
     flex-direction: column;
     align-items: flex-end;
@@ -1033,6 +1054,9 @@ footer menu a {
     font-size: 2rem;
   }
   nav .list-wrapper menu li section {
+    width: 20rem;
+  }
+  nav .list-wrapper .wide section {
     width: 20rem;
   }
   main .txt-style-wrapper > p {
