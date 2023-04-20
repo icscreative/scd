@@ -1332,10 +1332,15 @@ footer {
     }
   }
 
-  main {
+  main { 
     .txt-style-wrapper {
       flex-direction: column;
-
+      >p {
+        padding-inline: 4rem;
+      }
+      p:first-child, p:last-child {
+        padding-block: 4rem;
+      }
       p {
         span {
           display: block;
