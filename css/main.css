@@ -43,6 +43,7 @@ body {
   margin: 0;
   font-family: "Albert Sans", sans-serif;
   border-right: 0.25rem solid #E3FF53;
+  color: #0A0A17;
 }
 
 figure#logo {
@@ -69,7 +70,7 @@ menu {
   margin-inline-start: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 0.75rem;
   white-space: nowrap;
   transition-property: color, background-color;
@@ -92,12 +93,18 @@ nav#light-mode {
   top: -0.1em;
   z-index: 1;
 }
+nav#light-mode a:hover h3,
+nav#light-mode a:focus h3,
+nav#light-mode a:hover h4,
+nav#light-mode a:focus h4,
+nav#light-mode a:hover dt,
+nav#light-mode a:focus dt,
+nav#light-mode a:hover,
+nav#light-mode a:focus {
+  color: #1045D3;
+}
 nav#light-mode menu li a {
   color: #0A0A17;
-}
-nav#light-mode menu li a:hover,
-nav#light-mode menu li a:focus {
-  color: #1045D3;
 }
 nav#light-mode menu li button {
   color: #0A0A17;
@@ -123,6 +130,10 @@ nav#light-mode menu li .text-input-wrapper.dark:focus-within input {
   border-color: #8E7FFC;
   background-color: #F2F1FF;
 }
+nav#light-mode aside menu a:hover,
+nav#light-mode aside menu a:focus {
+  color: #1045D3;
+}
 nav#light-mode aside menu a {
   color: #383745;
 }
@@ -142,6 +153,16 @@ nav {
   gap: 2rem;
   padding: 0 6rem;
   z-index: 3;
+}
+nav a:hover h3,
+nav a:focus h3,
+nav a:hover h4,
+nav a:focus h4,
+nav a:hover dt,
+nav a:focus dt,
+nav a:hover,
+nav a:focus {
+  color: #1045D3;
 }
 nav .hamburger {
   display: none;
@@ -322,6 +343,9 @@ nav menu li section dl:last-child {
 nav menu li section dl:last-child dt a {
   padding: 0;
 }
+nav menu li section dt {
+  color: #1C1D4E;
+}
 nav menu li section a {
   color: #0A0A17;
   display: flex;
@@ -351,9 +375,10 @@ nav menu li section dl dd:last-child {
 nav menu li section a h4 {
   text-transform: uppercase;
   letter-spacing: 0.15rem;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 0.75rem;
   padding: 1rem 2rem;
+  color: #56536B;
 }
 nav menu li section a.arrow-link * {
   display: flex;
@@ -377,7 +402,7 @@ nav menu li section a dt {
   text-transform: uppercase;
   letter-spacing: 0.1rem;
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: 500;
   padding-block-start: 0.5rem;
 }
 nav menu li section dt + dd {
@@ -387,12 +412,13 @@ nav menu li section dd {
   font-size: 0.75rem;
   font-weight: 400;
   letter-spacing: 0.01em;
-  color: #0A0A17;
+  color: #56536B;
 }
 nav menu li section dt h3 {
   font-size: 1.125rem;
   text-transform: none;
-  font-weight: 600;
+  color: #1C1D4E;
+  font-weight: 500;
   letter-spacing: 0.01rem;
   margin-block-end: 0.5rem;
 }
@@ -402,6 +428,10 @@ nav aside {
 nav aside menu {
   justify-content: flex-end;
   align-items: center;
+}
+nav aside menu a:hover,
+nav aside menu a:focus {
+  color: #E3FF53;
 }
 nav aside menu a {
   font-size: 0.875rem;
@@ -417,6 +447,14 @@ nav aside menu a img.icon-search {
 nav .wide section {
   flex-direction: column;
   width: 48rem;
+}
+nav .wide section dl a {
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding-block-start: 0.5rem;
+  color: #1C1D4E;
 }
 nav .wide section .wide-wrap {
   display: flex;
@@ -441,7 +479,7 @@ main section + section {
   border-top: 0.1em solid #dcdde4;
 }
 main b {
-  font-weight: 500;
+  font-weight: 400;
 }
 main .txt-style-wrapper {
   display: flex;
@@ -522,22 +560,25 @@ main .p3 {
 main .s1 {
   text-transform: uppercase;
   letter-spacing: 0.2em;
+  font-weight: 500;
 }
-main .s1 div:nth-child(even) {
+main .s1 p:nth-child(even) {
   color: #21EAC5;
 }
 main .s2 {
   text-transform: uppercase;
   letter-spacing: 0.15em;
   font-size: 0.875rem;
+  font-weight: 500;
 }
-main .s2 div:nth-child(even) {
+main .s2 p:nth-child(even) {
   color: #93e4d5;
 }
 main .s3 {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-size: 0.75rem;
+  font-weight: 500;
 }
 main .color-wrapper,
 main .input-button-wrapper {
@@ -600,7 +641,7 @@ main .input-button-wrapper .night dt {
 }
 main .color-wrapper .dark-grey dt,
 main .input-button-wrapper .dark-grey dt {
-  background-color: #dcdde4;
+  background-color: #C2C0D1;
 }
 main .color-wrapper .grey dt,
 main .input-button-wrapper .grey dt {
@@ -977,7 +1018,7 @@ footer menu a:focus {
   nav .hamburger button span {
     flex-basis: 0.12rem;
     width: 100%;
-    background-color: #0A0A17;
+    background-color: #1C1D4E;
     transition: all ease-in-out 0.2s;
   }
   nav .subnav-wrapper {
