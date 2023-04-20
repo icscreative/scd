@@ -975,7 +975,7 @@ footer menu a:focus {
     cursor: pointer;
   }
   nav .hamburger button span {
-    flex-basis: 0.11rem;
+    flex-basis: 0.12rem;
     width: 100%;
     background-color: #0A0A17;
     transition: all ease-in-out 0.2s;
