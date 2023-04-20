@@ -1467,6 +1467,23 @@ footer {
 }
 
 @media (max-width: 480px) {
+  nav,
+  footer {
+    padding-inline: 1rem;
+  }
+
+  nav {
+    .list-wrapper {
+      background-position: 0;
+    }
+    figure#logo {
+      height: 2rem;
+    }
+    menu {
+      gap: 1rem;
+    }
+  }
+
   footer {
     .menu-wrapper {
       .menu-sub-wrapper {
@@ -1476,6 +1493,21 @@ footer {
           flex-direction: column;
         }
       }
+    }
+  }
+  main {
+    .txt-style-wrapper {
+      >p {
+        padding-inline: 1rem;
+      }
+      p:first-child, p:last-child {
+        padding-block: 1rem;
+      }
+    }
+    .color-wrapper,
+    .input-button-wrapper,
+    .text-input-wrapper {
+      padding-inline: 1rem;
     }
   }
 }
