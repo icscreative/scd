@@ -95,6 +95,10 @@ nav#light-mode {
 nav#light-mode menu li a {
   color: #0A0A17;
 }
+nav#light-mode menu li a:hover,
+nav#light-mode menu li a:focus {
+  color: #1045D3;
+}
 nav#light-mode menu li button {
   color: #0A0A17;
 }
@@ -228,6 +232,7 @@ nav menu li button h2 {
   align-items: center;
   white-space: nowrap;
   gap: 0.4rem;
+  transition: color ease-in-out 0.2s;
 }
 nav menu li button h2:after {
   content: "";
@@ -322,6 +327,10 @@ nav menu li section a {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
+}
+nav menu li section a:hover,
+nav menu li section a:focus {
+  color: #1045D3;
 }
 nav menu li section > a {
   border-bottom: 0.1rem solid #dcdde4;
@@ -838,6 +847,11 @@ footer menu a {
   color: #C2C0D1;
   letter-spacing: 0.01em;
   line-height: 1.5;
+  transition: color ease-in-out 0.2s;
+}
+footer menu a:hover,
+footer menu a:focus {
+  color: #E3FF53;
 }
 
 @media (max-width: 1440px) {
@@ -961,7 +975,7 @@ footer menu a {
     cursor: pointer;
   }
   nav .hamburger button span {
-    flex-basis: 0.1rem;
+    flex-basis: 0.11rem;
     width: 100%;
     background-color: #0A0A17;
     transition: all ease-in-out 0.2s;
@@ -1008,6 +1022,9 @@ footer menu a {
   }
   nav .list-wrapper li button h2:after {
     content: none;
+  }
+  nav .list-wrapper li button:hover h2 {
+    color: #1045D3;
   }
   nav .list-wrapper li button:hover + section {
     opacity: 0;
