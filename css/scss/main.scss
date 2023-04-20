@@ -1456,12 +1456,10 @@ footer {
     .menu-wrapper {
       flex-direction: column;
       margin: 0;
-
-      .menu-sub-wrapper {}
-
-      .menu-sub-wrapper:last-child {
-        flex-direction: column;
+      section {
+        min-width: 22vw;
       }
+
     }
   }
 }
@@ -1509,6 +1507,9 @@ footer {
   }
   footer {
     .menu-wrapper {
+      .menu-sub-wrapper:last-child {
+        flex-direction: column;
+      }
       .menu-sub-wrapper {
         flex-direction: column;
 

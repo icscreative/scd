@@ -1156,8 +1156,8 @@ footer menu a {
     flex-direction: column;
     margin: 0;
   }
-  footer .menu-wrapper .menu-sub-wrapper:last-child {
-    flex-direction: column;
+  footer .menu-wrapper section {
+    min-width: 22vw;
   }
 }
 @media (max-width: 480px) {
@@ -1188,6 +1188,9 @@ footer menu a {
   }
   nav:focus-within .hamburger button span:nth-child(3) {
     transform: translateY(-0.315rem) rotate(45deg);
+  }
+  footer .menu-wrapper .menu-sub-wrapper:last-child {
+    flex-direction: column;
   }
   footer .menu-wrapper .menu-sub-wrapper {
     flex-direction: column;
