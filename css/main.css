@@ -995,7 +995,7 @@ footer menu a {
     padding: 4rem;
     z-index: 2;
     border-top: 0.1em solid #dcdde4;
-    background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.4), #FFFFFF), url("../../img/dots.svg");
+    background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.4), #FFFFFF), url("https://raw.githubusercontent.com/icscreative/scd/6a274db1b311e023701fe68e1abade8cde822cf9/img/dots.svg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 0, -24rem;
