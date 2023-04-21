@@ -854,12 +854,12 @@ footer .menu-wrapper {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  gap: 2.5rem;
+  gap: 3.9rem;
   margin-inline-start: auto;
 }
 footer .menu-wrapper .menu-sub-wrapper {
   display: flex;
-  gap: 2.5rem;
+  gap: 3.9rem;
 }
 footer address ul {
   list-style-type: none;
@@ -938,6 +938,12 @@ footer menu a:focus {
   main .input-button-wrapper,
   main .text-input-wrapper {
     padding-inline: 2rem;
+  }
+  footer .menu-wrapper {
+    gap: 2.65rem;
+  }
+  footer .menu-wrapper .menu-sub-wrapper {
+    gap: 2.65rem;
   }
 }
 @media (max-width: 1023px) {
