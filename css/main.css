@@ -381,9 +381,6 @@ nav menu li section a h4 {
   padding: 1rem 2rem;
   color: #56536B;
 }
-nav menu li section a.arrow-link {
-  flex-grow: 1;
-}
 nav menu li section a.arrow-link * {
   display: flex;
   align-items: center;
