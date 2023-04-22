@@ -950,6 +950,7 @@ footer menu a:focus {
   nav,
   footer {
     flex-direction: column;
+    padding-inline: 4rem;
   }
   nav .menu-wrapper,
   footer .menu-wrapper {
@@ -1166,6 +1167,9 @@ footer menu a:focus {
   }
 }
 @media (max-width: 780px) {
+  nav {
+    padding-inline: 2rem;
+  }
   nav .list-wrapper {
     padding: 2rem;
   }
@@ -1222,6 +1226,7 @@ footer menu a:focus {
     justify-content: flex-start;
   }
   footer {
+    padding-inline: 2rem;
     flex-direction: column;
   }
   footer .menu-wrapper {

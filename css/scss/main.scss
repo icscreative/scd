@@ -1158,7 +1158,7 @@ footer {
   nav,
   footer {
     flex-direction: column;
-
+    padding-inline: 4rem;
     .menu-wrapper {
       margin: 0;
       justify-content: flex-start;
@@ -1432,6 +1432,7 @@ footer {
 
 @media (max-width: 780px) {
   nav {
+    padding-inline: 2rem;
     .list-wrapper {
       padding: 2rem;
       menu {
@@ -1521,6 +1522,7 @@ footer {
   }
 
   footer {
+    padding-inline: 2rem;
     flex-direction: column;
 
     .menu-wrapper {
