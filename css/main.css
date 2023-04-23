@@ -1252,8 +1252,8 @@ footer menu a:focus {
     margin-block-start: 4rem;
   }
   nav .list-wrapper menu li section {
-    max-width: 87.5%;
-    width: auto;
+    max-width: 88%;
+    width: auto !important;
   }
   nav figure#logo {
     height: 2rem;
