@@ -1424,24 +1424,6 @@ footer menu a:focus {
   main section .split {
     gap: 4rem;
   }
-  main section.services {
-    border-radius: 4rem 0 4rem 0;
-  }
-  main section.resources, main section.meeting-cta {
-    border-radius: 4rem 0 0;
-  }
-  main section.meeting-cta {
-    padding: 12rem 1rem 4rem;
-  }
-  main section.meeting-cta .abs .img-frame {
-    width: 20rem;
-  }
-  main section.meeting-cta .abs .img-frame:after {
-    margin: 2rem;
-  }
-  main section.meeting-cta .cta-block .input-button-wrapper {
-    margin-block-start: 6rem;
-  }
   main .txt-style-wrapper > p {
     padding-inline: 2rem;
   }
@@ -1494,6 +1476,24 @@ footer menu a:focus {
   }
   main#home header .split .input-button-wrapper {
     margin-inline: 0 auto;
+  }
+  main#home section.services {
+    border-radius: 4rem 0 4rem 0;
+  }
+  main#home section.resources, main#home section.meeting-cta {
+    border-radius: 4rem 0 0;
+  }
+  main#home section.meeting-cta {
+    padding: 12rem 1rem 4rem;
+  }
+  main#home section.meeting-cta .abs .img-frame {
+    width: 20rem;
+  }
+  main#home section.meeting-cta .abs .img-frame:after {
+    margin: 2rem;
+  }
+  main#home section.meeting-cta .cta-block .input-button-wrapper {
+    margin-block-start: 6rem;
   }
   main#home section .split {
     grid-template-columns: 1fr;

@@ -1703,7 +1703,6 @@ footer {
 
   main {
     header {
-
       h1 {
         margin-block-start: 2rem;
       }
@@ -1713,28 +1712,7 @@ footer {
         gap: 4rem;
       }
     }
-    section.services {
-      border-radius: 4rem 0 4rem 0;
-    }
-    section.resources, section.meeting-cta {
-      border-radius: 4rem 0 0;
-    }
-    section.meeting-cta {
-      padding: 12rem 1rem 4rem;
-      .abs {
-        .img-frame {
-          width: 20rem;
-        }
-        .img-frame:after {
-          margin: 2rem;
-        }
-      }
-      .cta-block {
-        .input-button-wrapper {
-          margin-block-start: 6rem;
-        }
-      }
-    }
+
     .txt-style-wrapper {
       >p {
         padding-inline: 2rem;
@@ -1800,6 +1778,28 @@ footer {
         flex-direction: column;
         .input-button-wrapper {
           margin-inline: 0 auto;
+        }
+      }
+    }
+    section.services {
+      border-radius: 4rem 0 4rem 0;
+    }
+    section.resources, section.meeting-cta {
+      border-radius: 4rem 0 0;
+    }
+    section.meeting-cta {
+      padding: 12rem 1rem 4rem;
+      .abs {
+        .img-frame {
+          width: 20rem;
+        }
+        .img-frame:after {
+          margin: 2rem;
+        }
+      }
+      .cta-block {
+        .input-button-wrapper {
+          margin-block-start: 6rem;
         }
       }
     }
