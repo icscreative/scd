@@ -1418,9 +1418,6 @@ footer menu a:focus {
   main#home section.resources ul.card-list li p {
     padding: 0;
   }
-  main header h1 {
-    margin-block-start: 2rem;
-  }
   main section .split {
     gap: 4rem;
   }
