@@ -1,4 +1,5 @@
-$black: #0A0A17;
+$black: #000000;
+$b: #0A0A17;
 $white: #FFFFFF;
 $ice: #F2F1FF;
 $grey: #dcdde4;
@@ -118,7 +119,7 @@ nav#light-mode {
   background-color: $white;
   border-color: $darkgrey;
   top: -0.1em;
-  z-index: 1;
+  z-index: 2;
 
   a:hover h3,
   a:focus h3,
@@ -645,6 +646,7 @@ main {
   }
 
   p {
+    margin-block-start: 2rem;
     span {
       display: block;
       max-width: 48ch;
@@ -655,6 +657,8 @@ main {
     padding-block-start: 6rem;
   }
   section {
+    position: relative;
+    z-index: 1;
     .split {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -665,12 +669,11 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: $black;
-    padding-block: 4rem 0!important;
+    padding-block: 4rem!important;
 
     p.s3 {
       color: $darkgrey;
-      margin-block: 1rem;
+      margin-block: 2rem;
     }
 
     dl {
@@ -687,9 +690,16 @@ main {
         }
 
         dt {
-          background-color: $grey;
           width: 100%;
           height: 3rem;
+          display: flex;
+          align-items: center;
+          max-width: 10rem;
+          margin: auto;
+          img {
+            width: 100%;
+            object-fit: contain;
+          }
         }
       }
 
@@ -705,7 +715,8 @@ main {
   section.services {
     position: relative;
     border: none;
-    padding-block-end: 0!important;
+    background-color: $b;
+    border-radius: 8rem 0 8rem 0;
     h3 {
       color: #93e4d5;
     }
@@ -715,7 +726,7 @@ main {
       right: -28rem;
       height: 48rem;
       width: 48rem;
-      opacity: 12%;
+      opacity: 8%;
       z-index: 0;
     }
     .intro {
@@ -807,7 +818,7 @@ main {
         border-radius: 50%;
         inset: 0;
         aspect-ratio: 1;
-        margin: 2rem;
+        margin: 4rem;
         background-color: $blue;
       }
     }
@@ -833,6 +844,7 @@ main {
     .t2 {
       margin-block: 2rem;
       font-weight: 300;
+      max-width: 16ch;
     }
   }
   section.resources {
@@ -966,13 +978,12 @@ main {
     z-index: 1;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 2rem;
+    gap: 4rem 2rem;
     margin: 2rem 0 0;
     padding: 2rem 0 0;
     border-top: 0.1rem $night solid;
     list-style-type: none;
     li {
-      background-color: $black;
       border-radius: 0 0 2rem 0;
       overflow: hidden;
       align-items: stretch;
@@ -984,11 +995,10 @@ main {
         border-bottom: 0.1rem $night solid;
       }
       .cta-block {
-        height: 100%;
         position: relative;
         display: flex;
         align-items: center;
-        min-height: 24rem;
+        min-height: 22rem;
         .cta-button {
           margin: auto;
           a {
@@ -1032,6 +1042,7 @@ main {
           >*::after {
           margin-inline-start: auto;
           margin-block: auto 0.2rem;
+          margin-inline-start: 1rem;
           }
         }
       }
@@ -1363,7 +1374,6 @@ main {
   }
 
   .input-button-wrapper.dark {
-    background-color: $black;
 
     .cta-button {
       a {
@@ -1423,11 +1433,24 @@ main#home {
   border-top: 0.1rem $night solid;
   background-color: $black;
   color: $white;
-  header, section {
+  section {
     padding: 8rem 6rem;
   }
   header {
-    padding-block-end: 0;
+    padding-block: 6rem 4rem;
+    .txt-frame {
+      position: relative;
+      z-index: 1;
+    }
+    .vid-frame {
+      video {
+        position: absolute;
+        z-index: 0;
+        top: 0;
+        left: 0;
+        height: 96vh;
+      }
+    }
     .input-button-wrapper {
       .cta-button {
         a {
@@ -1643,6 +1666,13 @@ footer {
     // p {
     //   max-width: 64ch;
     // }
+    header {
+      .vid-frame {
+        video {
+          height: 86vh;
+        }
+      }
+    }
     section, header {
       padding-inline: 2rem;
       ul.card-list {
@@ -1670,6 +1700,7 @@ footer {
 
   main {
     header {
+
       h1 {
         margin-block-start: 2rem;
       }
@@ -1687,6 +1718,9 @@ footer {
       .abs {
         .img-frame {
           width: 20rem;
+        }
+        .img-frame:after {
+          margin: 2rem;
         }
       }
       .cta-block {
@@ -1751,6 +1785,11 @@ footer {
       padding-inline: 4rem;
     }
     header {
+      .vid-frame {
+        video {
+          height: 72vh;
+        }
+      }
       .split {
         flex-direction: column;
         .input-button-wrapper {
@@ -1765,6 +1804,11 @@ footer {
       }
       ul.card-list {
         grid-template-columns: 1fr 1fr;
+        li {
+          .cta-block {
+            min-height: 16rem;
+          }
+        }
       }
     }
     section.meeting-cta {
@@ -2109,6 +2153,12 @@ footer {
     }
     header {
       flex-direction: column;
+      padding-block-start: 30vh;
+      .vid-frame {
+        video {
+          height: 50vh;
+        }
+      }
       >div {
         flex-basis: 100%;
       }
@@ -2120,12 +2170,17 @@ footer {
       }
       h1 {
         margin:0;
-        font-size: 16vw;
+        font-size: 18vw;
       }
     }
     section {
       ul.card-list {
         grid-template-columns: 1fr;
+        li {
+          .cta-block {
+            min-height: 24rem;
+          }
+        }
       }
     }
     section.garden {
@@ -2216,7 +2271,7 @@ footer {
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 501px) {
 
   nav,
   footer {
@@ -2308,6 +2363,7 @@ footer {
       padding-block-start: 6rem;
     }
     header {
+      padding-block-start: 28vh;
       .split {
         flex-direction: column;
         justify-content: flex-start;

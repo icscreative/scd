@@ -66,7 +66,7 @@ menu {
 
 .cta-button a {
   background-color: #E3FF53;
-  color: #0A0A17;
+  color: #000000;
   padding: 0.65rem 1rem;
   margin-inline-start: 0.75rem;
   text-transform: uppercase;
@@ -88,11 +88,11 @@ nav#light-mode:focus-within {
 }
 
 nav#light-mode {
-  color: #0A0A17;
+  color: #000000;
   background-color: #FFFFFF;
   border-color: #C2C0D1;
   top: -0.1em;
-  z-index: 1;
+  z-index: 2;
 }
 nav#light-mode a:hover h3,
 nav#light-mode a:focus h3,
@@ -105,10 +105,10 @@ nav#light-mode a:focus {
   color: #1045D3;
 }
 nav#light-mode menu li a {
-  color: #0A0A17;
+  color: #000000;
 }
 nav#light-mode menu li button {
-  color: #0A0A17;
+  color: #000000;
 }
 nav#light-mode menu li button h2:after {
   border-color: #8E7FFC;
@@ -117,7 +117,7 @@ nav#light-mode menu li .text-input-wrapper.dark button img {
   filter: invert(0);
 }
 nav#light-mode menu li .text-input-wrapper.dark input {
-  color: #0A0A17;
+  color: #000000;
   font-weight: 400;
 }
 nav#light-mode menu li .text-input-wrapper.dark input::placeholder {
@@ -164,7 +164,7 @@ a.arrow-link > *:after {
 
 nav {
   color: #FFFFFF;
-  background-color: #0A0A17;
+  background-color: #000000;
   position: sticky;
   top: 0;
   color: #FFFFFF;
@@ -304,7 +304,7 @@ nav menu li section {
   display: flex;
   flex-direction: column;
   overflow: auto;
-  color: #0A0A17;
+  color: #000000;
   background-color: #FFFFFF;
   position: absolute;
   top: 2.6rem;
@@ -323,7 +323,7 @@ nav menu li section .mobile-back button {
   align-items: flex-start;
   align-items: center;
   background-color: #E3FF53;
-  color: #0A0A17;
+  color: #000000;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-weight: 500;
@@ -368,7 +368,7 @@ nav menu li section dt {
   color: #1C1D4E;
 }
 nav menu li section a {
-  color: #0A0A17;
+  color: #000000;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -505,6 +505,9 @@ main header .input-button-wrapper {
 main header .input-button-wrapper .cta-button a {
   margin: 0;
 }
+main p {
+  margin-block-start: 2rem;
+}
 main p span {
   display: block;
   max-width: 48ch;
@@ -512,6 +515,10 @@ main p span {
 main .bg-shim {
   background-color: #F2F1FF;
   padding-block-start: 6rem;
+}
+main section {
+  position: relative;
+  z-index: 1;
 }
 main section .split {
   display: grid;
@@ -522,12 +529,11 @@ main section.garden {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #0A0A17;
-  padding-block: 4rem 0 !important;
+  padding-block: 4rem !important;
 }
 main section.garden p.s3 {
   color: #C2C0D1;
-  margin-block: 1rem;
+  margin-block: 2rem;
 }
 main section.garden dl {
   display: flex;
@@ -542,9 +548,16 @@ main section.garden dl div dd {
   font-size: 0;
 }
 main section.garden dl div dt {
-  background-color: #dcdde4;
   width: 100%;
   height: 3rem;
+  display: flex;
+  align-items: center;
+  max-width: 10rem;
+  margin: auto;
+}
+main section.garden dl div dt img {
+  width: 100%;
+  object-fit: contain;
 }
 main section.garden dl div:first-child {
   margin-inline-start: auto;
@@ -555,7 +568,8 @@ main section.garden dl div:last-child {
 main section.services {
   position: relative;
   border: none;
-  padding-block-end: 0 !important;
+  background-color: #0A0A17;
+  border-radius: 8rem 0 8rem 0;
 }
 main section.services h3 {
   color: #93e4d5;
@@ -566,7 +580,7 @@ main section.services img.floating-dots {
   right: -28rem;
   height: 48rem;
   width: 48rem;
-  opacity: 12%;
+  opacity: 8%;
   z-index: 0;
 }
 main section.services .intro {
@@ -652,7 +666,7 @@ main section.meeting-cta .abs .img-frame:after {
   border-radius: 50%;
   inset: 0;
   aspect-ratio: 1;
-  margin: 2rem;
+  margin: 4rem;
   background-color: #1C1D4E;
 }
 main section.meeting-cta .cta-block {
@@ -677,6 +691,7 @@ main section.meeting-cta p .highlight {
 main section.meeting-cta .t2 {
   margin-block: 2rem;
   font-weight: 300;
+  max-width: 16ch;
 }
 main section.resources {
   background-color: #F2F1FF;
@@ -807,14 +822,13 @@ main ul.card-list {
   z-index: 1;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 2rem;
+  gap: 4rem 2rem;
   margin: 2rem 0 0;
   padding: 2rem 0 0;
   border-top: 0.1rem #383745 solid;
   list-style-type: none;
 }
 main ul.card-list li {
-  background-color: #0A0A17;
   border-radius: 0 0 2rem 0;
   overflow: hidden;
   align-items: stretch;
@@ -827,11 +841,10 @@ main ul.card-list li h3 {
   border-bottom: 0.1rem #383745 solid;
 }
 main ul.card-list li .cta-block {
-  height: 100%;
   position: relative;
   display: flex;
   align-items: center;
-  min-height: 24rem;
+  min-height: 22rem;
 }
 main ul.card-list li .cta-block .cta-button {
   margin: auto;
@@ -877,6 +890,7 @@ main ul.card-list li .img-frame a.arrow-link > * {
 main ul.card-list li .img-frame a.arrow-link > *::after {
   margin-inline-start: auto;
   margin-block: auto 0.2rem;
+  margin-inline-start: 1rem;
 }
 main ul.card-list li p {
   padding: 2rem;
@@ -914,7 +928,7 @@ main .txt-style-wrapper > p {
   padding: 3rem 6rem;
 }
 main .txt-style-wrapper p:nth-child(even) {
-  background-color: #0A0A17;
+  background-color: #000000;
   color: #FFFFFF;
 }
 main .txt-style-wrapper p {
@@ -1062,7 +1076,7 @@ main .input-button-wrapper .teal dt {
 }
 main .color-wrapper .night dt,
 main .input-button-wrapper .night dt {
-  background-color: #0A0A17;
+  background-color: #000000;
 }
 main .color-wrapper .dark-grey dt,
 main .input-button-wrapper .dark-grey dt {
@@ -1126,7 +1140,7 @@ main .input-button-wrapper .cta-button a.arrow img {
 }
 main .input-button-wrapper .cta-button a.arrow:hover,
 main .input-button-wrapper .cta-button a.arrow:focus {
-  background-color: #0A0A17;
+  background-color: #000000;
 }
 main .input-button-wrapper .cta-button a.arrow:hover img,
 main .input-button-wrapper .cta-button a.arrow:focus img {
@@ -1144,7 +1158,7 @@ main .input-button-wrapper .cta-button.sm a {
 }
 main .input-button-wrapper .inline-link a {
   text-decoration: none;
-  color: #0A0A17;
+  color: #000000;
   font-weight: 500;
   border-bottom: 0.15rem solid #21EAC5;
   padding-block-end: 0.15rem;
@@ -1154,9 +1168,6 @@ main .input-button-wrapper .inline-link a {
 main .input-button-wrapper .inline-link a:hover,
 main .input-button-wrapper .inline-link a:focus {
   border-color: #1045D3;
-}
-main .input-button-wrapper.dark {
-  background-color: #0A0A17;
 }
 main .input-button-wrapper.dark .cta-button a {
   background-color: transparent;
@@ -1200,14 +1211,25 @@ main .input-button-wrapper.dark .inline-link a:focus {
 
 main#home {
   border-top: 0.1rem #383745 solid;
-  background-color: #0A0A17;
+  background-color: #000000;
   color: #FFFFFF;
 }
-main#home header, main#home section {
+main#home section {
   padding: 8rem 6rem;
 }
 main#home header {
-  padding-block-end: 0;
+  padding-block: 6rem 4rem;
+}
+main#home header .txt-frame {
+  position: relative;
+  z-index: 1;
+}
+main#home header .vid-frame video {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  height: 96vh;
 }
 main#home header .input-button-wrapper .cta-button a {
   background-color: transparent;
@@ -1256,11 +1278,11 @@ main#home header .input-button-wrapper .cta-button a {
 }
 
 .text-input-wrapper.dark {
-  background-color: #0A0A17;
+  background-color: #000000;
 }
 .text-input-wrapper.dark button {
   border: 0.1rem solid #E3FF53;
-  background-color: #0A0A17;
+  background-color: #000000;
   border-right: 0;
 }
 .text-input-wrapper.dark button img {
@@ -1268,7 +1290,7 @@ main#home header .input-button-wrapper .cta-button a {
 }
 .text-input-wrapper.dark input {
   border: 0.1rem solid #E3FF53;
-  background-color: #0A0A17;
+  background-color: #000000;
   color: #FFFFFF;
   border-left: 0;
   font-weight: 200;
@@ -1280,7 +1302,7 @@ main#home header .input-button-wrapper .cta-button a {
 footer {
   display: flex;
   gap: 2.75rem;
-  background-color: #0A0A17;
+  background-color: #000000;
   color: #FFFFFF;
   padding: 4rem 6rem;
   border-top: 0.1em solid rgba(194, 192, 209, 0.2509803922);
@@ -1375,6 +1397,9 @@ footer menu a:focus {
   nav menu {
     gap: 1.25rem;
   }
+  main#home header .vid-frame video {
+    height: 86vh;
+  }
   main#home section, main#home header {
     padding-inline: 2rem;
   }
@@ -1404,6 +1429,9 @@ footer menu a:focus {
   }
   main section.meeting-cta .abs .img-frame {
     width: 20rem;
+  }
+  main section.meeting-cta .abs .img-frame:after {
+    margin: 2rem;
   }
   main section.meeting-cta .cta-block .input-button-wrapper {
     margin-block-start: 6rem;
@@ -1452,6 +1480,9 @@ footer menu a:focus {
   main#home section, main#home header {
     padding-inline: 4rem;
   }
+  main#home header .vid-frame video {
+    height: 72vh;
+  }
   main#home header .split {
     flex-direction: column;
   }
@@ -1464,6 +1495,9 @@ footer menu a:focus {
   }
   main#home section ul.card-list {
     grid-template-columns: 1fr 1fr;
+  }
+  main#home section ul.card-list li .cta-block {
+    min-height: 16rem;
   }
   main#home section.meeting-cta {
     padding-block-start: 12rem;
@@ -1707,6 +1741,10 @@ footer menu a:focus {
   }
   main#home header {
     flex-direction: column;
+    padding-block-start: 30vh;
+  }
+  main#home header .vid-frame video {
+    height: 50vh;
   }
   main#home header > div {
     flex-basis: 100%;
@@ -1719,10 +1757,13 @@ footer menu a:focus {
   }
   main#home header h1 {
     margin: 0;
-    font-size: 16vw;
+    font-size: 18vw;
   }
   main#home section ul.card-list {
     grid-template-columns: 1fr;
+  }
+  main#home section ul.card-list li .cta-block {
+    min-height: 24rem;
   }
   main#home section.garden dl {
     flex-wrap: wrap;
@@ -1789,7 +1830,7 @@ footer menu a:focus {
     gap: 2rem;
   }
 }
-@media (max-width: 480px) {
+@media (max-width: 501px) {
   nav,
   footer {
     padding-inline: 1rem;
@@ -1841,6 +1882,9 @@ footer menu a:focus {
   main#home section, main#home header {
     padding-inline: 1rem;
     padding-block-start: 6rem;
+  }
+  main#home header {
+    padding-block-start: 28vh;
   }
   main#home header .split {
     flex-direction: column;
