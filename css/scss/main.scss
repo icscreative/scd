@@ -2209,6 +2209,11 @@ footer {
         }
       }
     }
+    section.meeting-cta {
+      .split {
+        grid-template-columns: 1fr;
+      }
+    }
   }
 
   main {

@@ -1789,6 +1789,9 @@ footer menu a:focus {
     max-width: 6rem;
     margin: auto;
   }
+  main#home section.meeting-cta .split {
+    grid-template-columns: 1fr;
+  }
   main .txt-style-wrapper > p {
     padding-inline: 2rem;
   }
