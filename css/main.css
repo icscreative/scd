@@ -1484,7 +1484,7 @@ footer menu a:focus {
     border-radius: 4rem 0 0;
   }
   main#home section.meeting-cta {
-    padding: 12rem 1rem 4rem;
+    padding: 12rem 4rem 4rem;
   }
   main#home section.meeting-cta .abs .img-frame {
     width: 20rem;
@@ -1789,6 +1789,9 @@ footer menu a:focus {
     max-width: 6rem;
     margin: auto;
   }
+  main#home section.meeting-cta {
+    padding-inline: 2rem;
+  }
   main#home section.meeting-cta .split {
     grid-template-columns: 1fr;
   }
@@ -1910,6 +1913,7 @@ footer menu a:focus {
     margin-inline: 0 auto;
   }
   main#home section.meeting-cta {
+    padding-inline: 1rem;
     padding-block-end: 2rem;
   }
   main#home section.meeting-cta .t2 {

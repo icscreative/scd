@@ -1788,7 +1788,7 @@ footer {
       border-radius: 4rem 0 0;
     }
     section.meeting-cta {
-      padding: 12rem 1rem 4rem;
+      padding: 12rem 4rem 4rem;
       .abs {
         .img-frame {
           width: 20rem;
@@ -2210,6 +2210,7 @@ footer {
       }
     }
     section.meeting-cta {
+      padding-inline: 2rem;
       .split {
         grid-template-columns: 1fr;
       }
@@ -2391,6 +2392,7 @@ footer {
       }
     }
     section.meeting-cta {
+      padding-inline: 1rem;
       padding-block-end: 2rem;
       .t2 {
         font-size: 2.5rem;
