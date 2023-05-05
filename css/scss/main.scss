@@ -1278,7 +1278,9 @@ main {
       background-image: linear-gradient(90deg, $white, $ice);
     }
   }
-
+  .input-button-wrapper.dark {
+    background-color: $black;
+  }
   .input-button-wrapper {
     align-items: center;
     justify-content: space-between;

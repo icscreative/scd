@@ -1094,6 +1094,9 @@ main .color-wrapper .grad-2 dt,
 main .input-button-wrapper .grad-2 dt {
   background-image: linear-gradient(90deg, #FFFFFF, #F2F1FF);
 }
+main .input-button-wrapper.dark {
+  background-color: #000000;
+}
 main .input-button-wrapper {
   align-items: center;
   justify-content: space-between;
