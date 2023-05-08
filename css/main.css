@@ -504,9 +504,6 @@ main header .input-button-wrapper {
 main header .input-button-wrapper .cta-button a {
   margin: 0;
 }
-main p {
-  margin-block-start: 2rem;
-}
 main p span {
   display: block;
   max-width: 48ch;
@@ -1176,7 +1173,9 @@ main .input-button-wrapper.dark .inline-link a:focus {
 #home ul.card-list li .img-frame {
   padding: 1rem 2rem;
   background-color: #1C1D4E;
-  height: 8rem;
+  min-height: 10rem;
+  max-height: 16rem;
+  height: 22vh;
   display: flex;
   align-items: flex-end;
   justify-content: stretch;
@@ -1202,6 +1201,7 @@ main .input-button-wrapper.dark .inline-link a:focus {
   padding: 2rem;
   margin: 0;
   font-weight: 200;
+  transition: background-color 0.2s ease-in-out;
 }
 #home ul.card-list li p span {
   display: inline;
@@ -1711,6 +1711,12 @@ footer menu a:focus {
   #home header {
     padding-inline: 1rem;
   }
+  #home ul.card-list {
+    gap: 2em 1rem;
+  }
+  #home section.resources ul.card-list {
+    gap: 2rem 1rem;
+  }
   #home section.meeting-cta .abs .img-frame {
     width: 17rem;
   }
@@ -1764,6 +1770,9 @@ footer menu a:focus {
   }
   #home section ul.card-list li .cta-block {
     min-height: 24rem;
+  }
+  #home section.resources ul.card-list li.alt.img {
+    border-radius: 0 0 2rem;
   }
   #home section.garden {
     padding-block-start: 0;
@@ -1913,7 +1922,7 @@ footer menu a:focus {
     padding-inline: 1rem;
   }
   #home header {
-    padding-block-start: 28vh;
+    padding-block-start: 22vh;
   }
   #home header .split {
     flex-direction: column;
@@ -1922,11 +1931,24 @@ footer menu a:focus {
   #home header .split .input-button-wrapper {
     margin-inline: 0 auto;
   }
+  #home section ul.card-list li .img-frame, #home section ul.card-list li p {
+    padding-inline: 0.5rem;
+  }
+  #home section.garden dl {
+    gap: 1rem 0;
+  }
   #home section.meeting-cta {
     padding-inline: 1rem;
+    border-radius: 2rem 0 0;
   }
   #home section.meeting-cta .t2 {
     font-size: 2.5rem;
+  }
+  #home section.resources {
+    border-radius: 2rem 0 0;
+  }
+  #home section.resources ul.card-list li.alt {
+    border-radius: 2rem 0 0;
   }
   main .txt-style-wrapper > p {
     padding-inline: 1rem;
@@ -1939,6 +1961,37 @@ footer menu a:focus {
   main .input-button-wrapper,
   main .text-input-wrapper {
     padding-inline: 1rem;
+  }
+}
+@media (max-width: 412px) {
+  nav,
+  footer {
+    padding: 0.35rem 0.5rem;
+  }
+  #home section, #home header {
+    padding-inline: 0.5rem;
+    padding-block-start: 4rem;
+  }
+  #home .pad {
+    padding-inline: 0.5rem;
+  }
+  #home header {
+    padding-block-start: 18vh;
+  }
+  #home section.meeting-cta {
+    padding-inline: 0.5rem;
+  }
+  main .txt-style-wrapper > p {
+    padding-inline: 0.5rem;
+  }
+  main .txt-style-wrapper p:first-child,
+  main .txt-style-wrapper p:last-child {
+    padding-block: 0.5rem;
+  }
+  main .color-wrapper,
+  main .input-button-wrapper,
+  main .text-input-wrapper {
+    padding-inline: 0.5rem;
   }
 }
 
