@@ -1173,9 +1173,22 @@ main {
       animation: slide-left 1s ease-in-out 2s 1 forwards;
     }
     .radial-container {
+      position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
+      
+    }
+    .radial-container:after {
+      content: "";
+      position: absolute;
+      inset: -25% -25% auto;
+      height: 150%;
+      width: 150%;
+      opacity: 0.08;
+      background-position: center;
+      background-size: contain;
+      background-image: url('https://raw.githubusercontent.com/icscreative/scd/6a274db1b311e023701fe68e1abade8cde822cf9/img/dots.svg');
     }
     .mask {
       position: relative;
