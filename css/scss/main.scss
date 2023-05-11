@@ -1211,17 +1211,17 @@ main {
       overflow: hidden;
       .radial {
         position: absolute;
-        inset: 0;
+        inset: -0.1rem;
         z-index: 1;
       }
       .radial.c1 {
-        background: conic-gradient(transparent 0% 66%, $black 66% 100%);
+        background: conic-gradient(transparent 0% 68%, $black 68% 100%);
       }
       .radial.c2 {
-        background: conic-gradient($black 0% 33%, transparent 33% 100%);
+        background: conic-gradient($black 0% 34%, transparent 34% 100%);
       }
       .radial.c3 {
-        background: conic-gradient(transparent 0% 33%, $black 33% 66%, transparent 66% 100%);
+        background: conic-gradient(transparent 0% 34%, $black 34% 68%, transparent 68% 100%);
       }
       .radial.m1 {
         background: conic-gradient(transparent 0% 68%, $teal 68% 99%, transparent 99% 0%);
