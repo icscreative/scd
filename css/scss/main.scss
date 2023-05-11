@@ -1190,6 +1190,13 @@ main {
       background-size: contain;
       background-image: url('https://raw.githubusercontent.com/icscreative/scd/6a274db1b311e023701fe68e1abade8cde822cf9/img/dots.svg');
     }
+    .shim {
+      position: absolute;
+      inset: 0;
+      z-index: 3;
+      border-radius: 50%;
+      box-shadow: 0 0 2rem $night;
+    }
     .mask {
       position: relative;
       display: flex;
