@@ -1186,6 +1186,7 @@ main {
       height: 150%;
       width: 150%;
       opacity: 0.08;
+      z-index: -1;
       background-position: center;
       background-size: contain;
       background-image: url('../docs/assets/dots.svg');
