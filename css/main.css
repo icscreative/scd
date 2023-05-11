@@ -1402,6 +1402,8 @@ main .input-button-wrapper.dark .inline-link a:focus {
 #home ul.card-list li .img-frame a.arrow-link > * {
   width: 100%;
   font-size: 1.5rem;
+  display: flex;
+  gap: 0.5rem;
 }
 #home ul.card-list li .img-frame a.arrow-link > *::after {
   margin-inline-start: auto;
