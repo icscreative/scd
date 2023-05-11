@@ -20,6 +20,57 @@ $xl: 2rem;
 $xxl: 3rem;
 $xxxl: 6rem;
 
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+  99% {
+    transform: rotate(120deg);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes blink-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes slide-up {
+  0% {
+    transform: translateY(12rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0rem);
+    opacity: 1;
+  }
+}
+@keyframes slide-down {
+  0% {
+    transform: translateY(-12rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0rem);
+    opacity: 1;
+  }
+}
+@keyframes slide-left {
+  0% {
+    transform: translateX(12rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0rem);
+    opacity: 1;
+  }
+}
 dl,
 dt,
 dd,
@@ -1035,6 +1086,152 @@ main {
   section {
     padding: 8rem 6rem;
   }
+  section.wheel {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6rem;
+    h2 {
+      text-align: center;
+      max-width: 16ch;
+    }
+    .supercharge {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      align-items: center;
+      justify-content: center;
+      gap: 4rem;
+    }
+    .txt-block {
+      margin: auto;
+      padding-inline-start: 1rem;
+      border-inline-start: 0.1em solid;
+      max-width: 32ch;
+      font-weight: 200;
+
+      opacity: 0;
+      h3 {
+        margin-block-end: 2rem;
+      }
+      ul {
+        list-style-type: none;
+        padding-inline-start: 1.5rem;
+        li {
+          padding-inline-start: 0.25rem;
+        }
+        li::before {
+          content: "\2022";
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-weight: bold;
+          position: absolute;
+          margin-inline-start: -1.75em;
+          border-radius: 50%;
+          width: 1.15em;
+        }
+      }
+    }
+    .txt-block.c1 {
+      border-color: $teal;
+      ul {
+        li::before {
+          color: $teal;
+          background-color: #21EAC518;
+        }
+      }
+    }
+    .txt-block.c2 {
+      border-color: $purple;
+      ul {
+        li::before {
+          color: $purple;
+          background-color: #8E7FFC20;
+        }
+      }
+    }
+    .txt-block.c3 {
+      grid-area: 2 / 2;
+      margin-block-start: 0;
+      border-color: $yellow;
+      ul {
+        li::before {
+          color: $yellow;
+          background-color: #E3FF5315;
+        }
+      }
+    }
+    .txt-block.c1.animate {
+      animation: slide-up 1s ease-in-out 0s 1 forwards;
+    }
+    .txt-block.c2.animate {
+      animation: slide-down 1s ease-in-out 1s 1 forwards;
+    }
+    .txt-block.c3.animate {
+      animation: slide-left 1s ease-in-out 2s 1 forwards;
+    }
+    .radial-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .mask {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      min-width: 24rem;
+      aspect-ratio: 1;
+      margin: auto;
+      border-radius: 50%;
+      overflow: hidden;
+      .radial {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+      }
+      .radial.c1 {
+        background: conic-gradient(transparent 0% 66%, $black 66% 100%);
+      }
+      .radial.c2 {
+        background: conic-gradient($black 0% 33%, transparent 33% 100%);
+      }
+      .radial.c3 {
+        background: conic-gradient(transparent 0% 33%, $black 33% 66%, transparent 66% 100%);
+      }
+      .radial.m1 {
+        background: conic-gradient(transparent 0% 68%, $teal 68% 99%, transparent 99% 0%);
+        opacity: 0;
+      }
+      .base {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        background: conic-gradient($black 0% 1%, $purple 1% 32%, $black 32% 34%, $yellow 34% 66%, $black 66% 68%, $teal 68% 99%, $black 99% 0%);
+      }
+      .radial.c1.animate {
+        animation: spin 1s ease-in-out 1 forwards;
+      }
+      .radial.c2.animate {
+        animation: spin 1s ease-in-out 1s 1 forwards;
+      }
+      .radial.c3.animate {
+        animation: spin 1s ease-in-out 2s 1 forwards;
+      }
+      .radial.m1.animate {
+        animation: blink-in 0s ease-in-out 1s 1 forwards;
+      }
+      img {
+        z-index: 1;
+        position: absolute;
+        width: calc(100% - 2.5rem);
+        height: calc(100% - 2.5rem);
+      }
+    }
+  }
   section.garden {
     display: flex;
     flex-direction: column;
@@ -1392,7 +1589,7 @@ main {
         padding: 1rem 2rem;
         background-color: $blue;
         min-height: 10rem;
-        max-height: 16rem;
+        max-height: 14rem;
         height: 22vh;
         display: flex;
         align-items: flex-end;
@@ -1694,6 +1891,30 @@ footer {
         }
       }
     }
+    section.wheel {
+      .supercharge {
+        // grid-template-columns: 1fr;
+      }
+      .radial-container {
+        order: -1;
+        grid-area: 1/2;
+      }
+      .mask {
+        min-width: unset;
+      }
+      .txt-block {
+        margin: 0  0 auto 0 ;
+      }
+      .txt-block.c1 {
+        grid-area: 2/1;
+      }
+      .txt-block.c2 {
+        grid-area: 2/2;
+      }
+      .txt-block.c3 {
+        grid-area: 2/3;
+      }
+    }
     section.resources {
       ul.card-list {
         gap: 2rem;
@@ -1738,7 +1959,26 @@ footer {
 }
 
 @media (max-width: 1023px) {
-
+  @keyframes slide-down {
+    0% {
+      transform: translateY(12rem);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0rem);
+      opacity: 1;
+    }
+  }
+  @keyframes slide-left {
+    0% {
+      transform: translateY(12rem);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0rem);
+      opacity: 1;
+    }
+  }
   nav,
   footer {
     flex-direction: column;
@@ -1779,6 +2019,29 @@ footer {
         .input-button-wrapper {
           margin-inline: 0 auto;
         }
+      }
+    }
+    section.wheel {
+      .supercharge {
+        grid-template-columns: 1fr;
+      }
+      .radial-container {
+        grid-area: auto;
+      }
+      .mask {
+        min-width: 24rem;
+      }
+      .txt-block {
+        margin: auto;
+      }
+      .txt-block.c1 {
+        grid-area: auto;
+      }
+      .txt-block.c2 {
+        grid-area: auto;
+      }
+      .txt-block.c3 {
+        grid-area: auto;
       }
     }
     section.services {
@@ -2193,6 +2456,11 @@ footer {
             min-height: 24rem;
           }
         }
+      }
+    }
+    section.wheel {
+      .mask {
+        min-width: 18rem;
       }
     }
     section.resources {

@@ -30,4 +30,22 @@ $(function () {
     $('nav section button.close').click(function() {
         $('nav#light-mode .list-wrapper').focus()
     })
+    
+    const rings = document.querySelectorAll('.radial');
+    const texts = document.querySelectorAll('.txt-block');
+
+    const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+        entry.target.classList.add('animate');
+        texts.forEach(text => text.classList.add('animate'));
+        }
+    });
+    }, {
+    threshold: 1
+    });
+
+    rings.forEach(ring => {
+    observer.observe(ring);
+    });
 });
