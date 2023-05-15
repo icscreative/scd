@@ -1249,7 +1249,7 @@ main .input-button-wrapper.dark .inline-link a:focus {
   margin-block-start: 4rem;
   padding: 0;
   border: 0;
-  gap: 4rem;
+  gap: 2rem;
 }
 #home section.resources ul.card-list li {
   display: flex;
@@ -1343,7 +1343,8 @@ main .input-button-wrapper.dark .inline-link a:focus {
   list-style-type: none;
 }
 #home ul.card-list li {
-  max-width: 55ch;
+  display: flex;
+  flex-direction: column;
   border-radius: 0 0 2rem 0;
   overflow: hidden;
   align-items: stretch;
@@ -1360,6 +1361,7 @@ main .input-button-wrapper.dark .inline-link a:focus {
   display: flex;
   align-items: center;
   min-height: 22rem;
+  margin: auto 0;
 }
 #home ul.card-list li .cta-block .cta-button {
   margin: auto;
@@ -1404,7 +1406,7 @@ main .input-button-wrapper.dark .inline-link a:focus {
   width: 100%;
   font-size: 1.5rem;
   display: flex;
-  gap: 0.5rem;
+  gap: 1rem;
 }
 #home ul.card-list li .img-frame a.arrow-link > *::after {
   margin-inline-start: auto;
@@ -1733,13 +1735,13 @@ footer menu a:focus {
     margin-inline: 0 auto;
   }
   #home section.wheel .supercharge {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 2fr;
   }
   #home section.wheel .radial-container {
     grid-area: auto;
   }
   #home section.wheel .mask {
-    min-width: 24rem;
+    min-width: 20rem;
   }
   #home section.wheel .txt-block {
     margin: auto;
@@ -1998,13 +2000,12 @@ footer menu a:focus {
   }
 }
 @media (max-width: 700px) {
-  nav,
   #home section,
   #home header {
     padding-inline: 4rem;
   }
-  nav .hamburger button {
-    margin-inline-end: -3rem;
+  nav {
+    padding: 0.5rem 1rem;
   }
   nav .list-wrapper {
     padding: 1rem;
@@ -2043,6 +2044,9 @@ footer menu a:focus {
   }
   #home section ul.card-list li .cta-block {
     min-height: 24rem;
+  }
+  #home section.wheel .supercharge {
+    grid-template-columns: 1fr;
   }
   #home section.wheel .mask {
     min-width: 18rem;

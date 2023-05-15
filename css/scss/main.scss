@@ -1474,7 +1474,7 @@ main {
       margin-block-start: 4rem;
       padding: 0;
       border: 0;
-      gap: 4rem;
+      gap: 2rem;
       li {
         display: flex;
         flex-direction: column;
@@ -1569,7 +1569,8 @@ main {
     border-top: 0.1rem $night solid;
     list-style-type: none;
     li {
-      max-width: 55ch;
+      display: flex;
+      flex-direction: column;
       border-radius: 0 0 2rem 0;
       overflow: hidden;
       align-items: stretch;
@@ -1585,6 +1586,7 @@ main {
         display: flex;
         align-items: center;
         min-height: 22rem;
+        margin: auto 0;
         .cta-button {
           margin: auto;
           a {
@@ -1627,7 +1629,7 @@ main {
             width: 100%;
             font-size: 1.5rem;
             display: flex;
-            gap: 0.5rem;
+            gap: 1rem;
           }
           >*::after {
           margin-inline-start: auto;
@@ -2046,13 +2048,13 @@ footer {
     }
     section.wheel {
       .supercharge {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 2fr;
       }
       .radial-container {
         grid-area: auto;
       }
       .mask {
-        min-width: 24rem;
+        min-width: 20rem;
       }
       .txt-block {
         margin: auto;
@@ -2396,20 +2398,19 @@ footer {
   }
 }
 @media (max-width: 700px) {
-  nav,
   #home section,
   #home header {
     padding-inline: 4rem;
   }
   nav {
-    .hamburger {
-      button {
-        margin-inline-end: -3rem;
-      }
-    }
+    padding: 0.5rem 1rem;
     .list-wrapper {
       padding: 1rem;
+  nav {
+    figure.logo {
 
+    }
+  }
       menu {
         li {
           button {
@@ -2482,6 +2483,9 @@ footer {
       }
     }
     section.wheel {
+      .supercharge {
+        grid-template-columns: 1fr;
+      }
       .mask {
         min-width: 18rem;
       }
