@@ -119,7 +119,7 @@ menu {
 .cta-button a {
   background-color: #E3FF53;
   color: #000000;
-  padding: 0.65rem 1rem;
+  padding: 0.65rem 1.05rem;
   margin-inline-start: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
@@ -1050,7 +1050,7 @@ main .input-button-wrapper.dark .inline-link a:focus {
 }
 #home section.garden p.s3 {
   color: #C2C0D1;
-  margin-block: 2rem;
+  margin-block: 2.25rem;
 }
 #home section.garden dl {
   display: flex;
@@ -1059,22 +1059,22 @@ main .input-button-wrapper.dark .inline-link a:focus {
   margin-inline: auto;
 }
 #home section.garden dl div {
-  flex-basis: 12ch;
+  flex-basis: 14ch;
 }
 #home section.garden dl div dd {
   font-size: 0;
 }
 #home section.garden dl div dt {
   width: 100%;
-  height: 3rem;
+  height: 100%;
   display: flex;
   align-items: center;
-  max-width: 10rem;
   margin: auto;
 }
 #home section.garden dl div dt img {
   width: 100%;
   object-fit: contain;
+  margin: auto;
 }
 #home section.garden dl div:first-child {
   margin-inline-start: auto;
@@ -1615,7 +1615,7 @@ footer menu a:focus {
   footer {
     padding-inline: 2rem;
   }
-  nav menu {
+  nav menu#primary {
     gap: 1.25rem;
   }
   #home header {
@@ -1874,7 +1874,7 @@ footer menu a:focus {
     opacity: 0;
     background-color: #FFFFFF;
     margin-block-start: 5rem;
-    padding: 4rem;
+    padding: 5rem 2rem 4rem 4rem;
     z-index: 2;
     border-top: 0.1em solid #dcdde4;
     background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.4), #FFFFFF), url("../docs/assets/dots.svg");
@@ -2008,7 +2008,9 @@ footer menu a:focus {
     padding: 0.5rem 1rem;
   }
   nav .list-wrapper {
-    padding: 1rem;
+    padding: 2rem;
+    padding-block-start: 5rem;
+    margin-block-start: 4rem;
   }
   nav .list-wrapper menu li button h2 {
     font-size: 2rem;
@@ -2069,7 +2071,7 @@ footer menu a:focus {
     margin: 0;
   }
   #home section.garden dl dt img {
-    max-width: 6rem;
+    max-width: 16ch;
     margin: auto;
   }
   #home section.meeting-cta {
@@ -2152,6 +2154,8 @@ footer menu a:focus {
   nav .list-wrapper {
     background-position: 0;
     margin-block-start: 2.7rem;
+    padding: 1rem;
+    padding-block-start: 3rem;
   }
   nav .list-wrapper menu li section {
     max-width: 94%;
@@ -2215,7 +2219,7 @@ footer menu a:focus {
     padding-inline: 0.5rem;
   }
   #home section.garden dl {
-    gap: 1rem 0;
+    gap: 2rem;
   }
   #home section.meeting-cta {
     padding-inline: 1rem;

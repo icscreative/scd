@@ -143,7 +143,7 @@ menu {
   a {
     background-color: $yellow;
     color: $black;
-    padding: 0.65rem 1rem;
+    padding: 0.65rem 1.05rem;
     margin-inline-start: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.1rem;
@@ -1261,7 +1261,7 @@ main {
 
     p.s3 {
       color: $darkgrey;
-      margin-block: 2rem;
+      margin-block: 2.25rem;
     }
 
     dl {
@@ -1271,7 +1271,7 @@ main {
       margin-inline: auto;
 
       div {
-        flex-basis: 12ch;
+        flex-basis: 14ch;
 
         dd {
           font-size: 0;
@@ -1279,14 +1279,14 @@ main {
 
         dt {
           width: 100%;
-          height: 3rem;
+          height: 100%;
           display: flex;
           align-items: center;
-          max-width: 10rem;
           margin: auto;
           img {
             width: 100%;
             object-fit: contain;
+            margin: auto;
           }
         }
       }
@@ -1889,7 +1889,7 @@ footer {
   }
 
   nav {
-    menu {
+    menu#primary {
       gap: 1.25rem;
     }
   }
@@ -2218,7 +2218,7 @@ footer {
       opacity: 0;
       background-color: $white;
       margin-block-start: 5rem;
-      padding: 4rem;
+      padding: 5rem 2rem 4rem 4rem;
       z-index: 2;
       border-top: 0.1em solid $grey;
       background-image: linear-gradient(90deg, #ffffff66, $white), url('../docs/assets/dots.svg');
@@ -2405,7 +2405,9 @@ footer {
   nav {
     padding: 0.5rem 1rem;
     .list-wrapper {
-      padding: 1rem;
+      padding: 2rem;
+      padding-block-start: 5rem;
+      margin-block-start: 4rem;
   nav {
     figure.logo {
 
@@ -2512,7 +2514,7 @@ footer {
         }
         dt {
           img {
-            max-width: 6rem;
+            max-width: 16ch;
             margin: auto;
           }
         }
@@ -2622,6 +2624,8 @@ footer {
     .list-wrapper {
       background-position: 0;
       margin-block-start: 2.7rem;
+      padding: 1rem;
+      padding-block-start: 3rem;
 
       menu {
         li {
